@@ -1,0 +1,35 @@
+.tmdb-header {
+    background-color: #032541;
+    color: white;
+    height: 64px;
+}
+
+.logo {
+    height: 20px;
+    width: 164px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar button {
+    color: white;
+}
+
+.profile-button {
+    background-color: #21d07a;
+    border-radius: 50%;
+    padding: 8px;
+    margin-left: 10px;
+}
+
+
+.custom-menu-panel {
+    background-color: #f6f6f6 !important;
+}
+
+.custom-menu-item {
+    width: 170px !important;
+    background-color: #f6f6f6 !important;
+}
