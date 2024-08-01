@@ -7,6 +7,10 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
@@ -41,6 +45,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+
 
 @NgModule({
     
@@ -86,8 +93,14 @@ import { MatTreeModule } from '@angular/material/tree';
         MatToolbarModule,
         MatTooltipModule,
         MatTreeModule,
+        MatFormFieldModule,
+
+
+
         PortalModule,
         ScrollingModule,
+        BrowserModule,
+        BrowserAnimationsModule
       ],
   exports: [
     A11yModule,
@@ -131,8 +144,16 @@ import { MatTreeModule } from '@angular/material/tree';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    MatFormFieldModule,
+
+
+
     PortalModule,
     ScrollingModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ]
 })
 export class MaterialModule { }
+
+

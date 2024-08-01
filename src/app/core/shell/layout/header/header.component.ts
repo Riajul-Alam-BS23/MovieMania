@@ -7,6 +7,14 @@ import { MatMenuTrigger } from '@angular/material/menu';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  @ViewChild('moviesMenuTrigger') moviesMenuTrigger: MatMenuTrigger;
+  openMyMenu(menuTrigger: MatMenuTrigger) {
+    menuTrigger.openMenu();
+  }
+  @ViewChild(MatMenuTrigger) menuTrigger!: MatMenuTrigger;
 
+  openMenu(trigger: MatMenuTrigger) {
+    trigger.openMenu();
+  }
 }
+
+
