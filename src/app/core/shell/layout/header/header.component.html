@@ -1,30 +1,89 @@
 <mat-toolbar color="primary" class="tmdb-header">
-    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
-        alt="TMDB Logo" class="logo">
-    <button mat-button [matMenuTriggerFor]="moviesMenu">Movies</button>
+    <a routerLink="/home">
+      <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+           alt="TMDB Logo" class="logo">
+    </a>
+    <button  mat-button #moviesMenuTrigger="matMenuTrigger"
+            (mouseover)="moviesMenuTrigger.openMenu()"  
+            [matMenuTriggerFor]="moviesMenu" >Movies</button>
     <mat-menu #moviesMenu="matMenu" class="custom-menu-panel">
-        <button mat-menu-item class="custom-menu-item">Popular</button>
-        <button mat-menu-item class="custom-menu-item">Now Playing</button>
-        <button mat-menu-item class="custom-menu-item">Upcoming</button>
-        <button mat-menu-item class="custom-menu-item">Top Rated</button>
+      <button mat-menu-item class="custom-menu-item">Popular</button>
+      <button mat-menu-item class="custom-menu-item">Now Playing</button>
+      <button mat-menu-item class="custom-menu-item">Upcoming</button>
+      <button mat-menu-item class="custom-menu-item">Top Rated</button>
     </mat-menu>
-    <button mat-button>TV Shows</button>
-    <button mat-button>People</button>
-    <button mat-button>More</button>
+    
+    <button mat-button [matMenuTriggerFor]="tvShowsMenu"
+     #tvShowsMenuTrigger="matMenuTrigger"       
+     (mouseover)="tvShowsMenuTrigger.openMenu()"       
+    >TV Shows</button>
+    <mat-menu #tvShowsMenu="matMenu" class="custom-menu-panel">
+      <button mat-menu-item class="custom-menu-item">Popular</button>
+      <button mat-menu-item class="custom-menu-item">Airing Today</button>
+      <button mat-menu-item class="custom-menu-item">On TV</button>
+      <button mat-menu-item class="custom-menu-item">Top Rated</button>
+    </mat-menu>
+    
+    <button mat-button [matMenuTriggerFor]="peopleMenu">People</button>
+    <mat-menu #peopleMenu="matMenu"class="custom-menu-panel">
+      <button mat-menu-item class="custom-menu-item">Popular People</button>
+    </mat-menu>
+    
+    <button mat-button [matMenuTriggerFor]="moreMenu">More</button>
+    <mat-menu #moreMenu="matMenu"class="custom-menu-panel">
+      <button mat-menu-item class="custom-menu-item">Discussions</button>
+      <button mat-menu-item class="custom-menu-item">Leaderboard</button>
+      <button mat-menu-item class="custom-menu-item">Support</button>
+      <button mat-menu-item class="custom-menu-item">API</button>
+    </mat-menu>
+    
     <span class="spacer"></span>
-    <button mat-icon-button>
+    <div class="nav-icon">
+      <button mat-icon-button [matMenuTriggerFor]="addMovieMenu">
         <mat-icon>add</mat-icon>
-    </button>
-    <button mat-icon-button>
-        <mat-icon>language</mat-icon>
-    </button>
-    <button mat-icon-button>
+      </button>
+      <mat-menu #addMovieMenu="matMenu"class="custom-menu-panel">
+        <button mat-menu-item class="custom-menu-item">Add New Movie</button>
+        <button mat-menu-item class="custom-menu-item">Add New TV Show</button>
+      </mat-menu>
+      <button mat-icon-button>
+        <mat-icon class="language-icon">language</mat-icon>
+      </button>
+      <button mat-icon-button>
         <mat-icon>notifications</mat-icon>
-    </button>
-    <button mat-icon-button class="profile-button">
+      </button>
+      <button mat-icon-button class="profile-button">
         <mat-icon>account_circle</mat-icon>
-    </button>
-    <button mat-icon-button>
-        <mat-icon>search</mat-icon>
-    </button>
-</mat-toolbar>
+      </button>
+      <button mat-icon-button>
+        <mat-icon class="search-icon">search</mat-icon>
+      </button>        
+    </div>
+  </mat-toolbar>
+
+
+
+   
+
+
+
+  
+
+<!-- <mat-toolbar color="primary">
+  <span>My Application</span>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Home</button>
+    <button mat-menu-item>About</button>
+    <button mat-menu-item [matMenuTriggerFor]="galleryMenu">Gallery</button>
+  </mat-menu>
+  <mat-menu #galleryMenu="matMenu">
+    <button mat-menu-item>Html</button>
+    <button mat-menu-item>Js</button>
+    <button mat-menu-item>Angular</button>
+    <button mat-menu-item>Typescript</button>
+  </mat-menu>
+</mat-toolbar> -->
+
+
