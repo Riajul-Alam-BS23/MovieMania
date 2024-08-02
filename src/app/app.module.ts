@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './material/material.module';
 import { CoreModule } from './core/core.module';
-import { LayoutModule } from '@angular/cdk/layout';
 import { HomeModule } from './features/home/home.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { HomeModule } from './features/home/home.module';
     AppRoutingModule,
     MaterialModule,
     CoreModule,
-    HomeModule
+    HomeModule,
+    SharedModule
+    
   ],
   providers: [
     provideAnimationsAsync()
