@@ -1,7 +1,7 @@
 .tmdb-header {
     background-color: #032541;
     color: white;
-    height: 75px;
+    height: 60px;
 }
 
 .logo {
@@ -15,9 +15,8 @@
 
 mat-toolbar button {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 5px;
-
 }
 
 .profile-button {
