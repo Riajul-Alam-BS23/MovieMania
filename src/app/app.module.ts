@@ -9,6 +9,8 @@ import { MaterialModule } from './material/material.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './features/home/home.module';
 import { SharedModule } from './shared/shared.module';
+import { MovieModule } from './features/movie/movie.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,13 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MaterialModule,
+    // MaterialModule,
     CoreModule,
+    HttpClientModule,
     HomeModule,
-    SharedModule
-    
+    SharedModule,
+    MovieModule,  
+    AppRoutingModule,
   ],
   providers: [
     provideAnimationsAsync()

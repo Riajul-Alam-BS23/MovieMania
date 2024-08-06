@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MaterialModule } from '../material';
 import { CommonModule } from '@angular/common';
+import { MovieRatingComponent } from './movie-rating/movie-rating.component';
 
 
 
 @NgModule({
   declarations: [
-    MovieCardComponent
+    MovieCardComponent,
+    MovieRatingComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,9 @@ import { CommonModule } from '@angular/common';
     MaterialModule
   ],
   exports: [
-    MovieCardComponent
+    MovieCardComponent,
+    MovieRatingComponent
+
   ]
 })
 export class SharedModule { }
