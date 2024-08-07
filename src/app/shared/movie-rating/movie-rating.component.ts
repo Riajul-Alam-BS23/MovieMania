@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-movie-rating',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './movie-rating.component.css'
 })
 export class MovieRatingComponent {
-
+  @Input() ratingNumber: number=63;
+  @Input() ratingSize: number;
 }
