@@ -1,12 +1,16 @@
-<div class="home-searchbar">
-  <div class="home-searchbar-title">
-    <h3>Welcome.</h3>
-    <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
-  </div>
-  <div class="home-search">
-    <mat-form-field appearance="fill" class="home-search-input">
-      <input matInput placeholder="Search for a movie, TV show, person...">
-    </mat-form-field>
-    <button mat-button matSuffix [ngClass]="'input-inside-search'">Search</button>
-  </div>
+
+
+<app-search></app-search>
+<!-- Trending Movies -->
+<div class="trending-movies-container">
+  <app-movie-carousel [title]="'Trending'">
+    <div class="button-container trending-movies-button-content">
+      <button mat-button (click)="toggleTrendingMovies()"
+        [ngClass]="!defaultSelectedTrendingMovies ? 'textColor' : 'defaultColor'">Today</button>
+      <button mat-button (click)="toggleTrendingMovies()"
+        [ngClass]="defaultSelectedTrendingMovies ? 'textColor' : 'defaultColor'">This Week</button>
+      <div class="selected" [ngClass]="defaultSelectedTrendingMovies ?  'p-right': 'p-left'"></div>
+    </div>
+    <ng-content></ng-content>
+  </app-movie-carousel>
 </div>

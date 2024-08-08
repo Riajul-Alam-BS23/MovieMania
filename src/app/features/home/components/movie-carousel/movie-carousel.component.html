@@ -1,0 +1,15 @@
+
+
+<div class="movies-carousel-section container">
+    <div class="movies-carousel-header">
+        <h5 class="carousel-header" style="font-size: 24px; margin-right: 20px;">{{title}}</h5>
+        <ng-content select=".trending-movies-button-content"></ng-content>
+    </div>
+    <div class="movie-carousel-card-items">
+        <div *ngFor="let movie1 of movies" class="movie-card-section">
+            <app-movie-card [movie]="movie1">
+                <app-movie-rating class="content" [ratingSize]="50" [ratingNumber]="76"></app-movie-rating>
+            </app-movie-card>
+        </div>
+    </div>
+</div>
