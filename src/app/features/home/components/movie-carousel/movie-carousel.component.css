@@ -1,0 +1,10 @@
+
+.movies-carousel-header{
+    display: flex;
+    flex-direction: row;
+}
+.movie-carousel-card-items{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
