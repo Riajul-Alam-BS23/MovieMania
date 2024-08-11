@@ -1,15 +1,46 @@
-
-
 <app-search></app-search>
 <!-- Trending Movies -->
 <div class="trending-movies-container">
-  <app-movie-carousel [title]="'Trending'">
+  <app-movie-carousel 
+  [title]="'Trending'" 
+  [movies$]="movies$"
+  >
     <div class="button-container trending-movies-button-content">
-      <button mat-button (click)="toggleTrendingMovies()"
-        [ngClass]="!defaultSelectedTrendingMovies ? 'textColor' : 'defaultColor'">Today</button>
-      <button mat-button (click)="toggleTrendingMovies()"
-        [ngClass]="defaultSelectedTrendingMovies ? 'textColor' : 'defaultColor'">This Week</button>
-      <div class="selected" [ngClass]="defaultSelectedTrendingMovies ?  'p-right': 'p-left'"></div>
+      <button mat-button (click)="toggleTrendingMovies('day')" [ngClass]="
+          !defaultSelectedTrendingMovies ? 'textColor' : 'defaultColor'
+        ">
+        Today
+      </button>
+      <button mat-button (click)="toggleTrendingMovies('week')" [ngClass]="[
+          defaultSelectedTrendingMovies ? 'textColor' : 'defaultColor'
+        ]">
+        This Week
+      </button>
+      <div class="selected" [ngClass]="defaultSelectedTrendingMovies ? 'p-right' : 'p-left'"></div>
+    </div>
+    <ng-content></ng-content>
+  </app-movie-carousel>
+</div>
+
+<!-- Popular Movies -->
+
+<div class="trending-movies-container">
+  <app-movie-carousel 
+  [title]="'Popular'" 
+  [movies$]="popularMovies$"
+  >
+    <div class="button-container trending-movies-button-content">
+      <button mat-button (click)="togglePopularMovies('movie')" [ngClass]="
+          !defaultSelectedPopularMovies ? 'textColor' : 'defaultColor'
+        ">
+        Movie
+      </button>
+      <button mat-button (click)="togglePopularMovies('tv')" [ngClass]="[
+          defaultSelectedPopularMovies ? 'textColor' : 'defaultColor'
+        ]">
+        Tv
+      </button>
+      <div class="selected" [ngClass]="defaultSelectedPopularMovies ? 'p-right' : 'p-left'"></div>
     </div>
     <ng-content></ng-content>
   </app-movie-carousel>

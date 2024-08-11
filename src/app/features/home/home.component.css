@@ -30,10 +30,25 @@
     width: 50%;
     top: 0;
 }
+.selectedPopular{
+    transition: all .3s ease-in-out;
+    position: absolute;
+    background-color:rgb(3, 37, 65);
+    border-radius: 30px;
+    height: 2rem;
+    width: 50%;
+    top: 0;  
+}
 .p-left{
     left: 0;
 }
 .p-right{
+    left:50%;
+}
+.popular-left{
+    left: 0;
+}
+.popular-right{
     left:50%;
 }
 .button-container{

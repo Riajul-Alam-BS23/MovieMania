@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Movie } from '../../core/models/api/MovieResponse';
 
 @Component({
   selector: 'app-movie-card',
@@ -6,9 +7,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./movie-card.component.css']
 })
 export class MovieCardComponent {
-  @Input() movie;
-  title = 'NOVA';
-  date = 'Mar 03, 1974';
-  rating = 68;
-  imageUrl = "https://media.themoviedb.org/t/p/w440_and_h660_face/sgv6nwj1TlDDKqxbcUEuds8fqoz.jpg";
+  @Input() movie: Movie;
+  title:string;
+  date:string;
+  rating:number;  
+  ngOnInit() : void{
+    this.title = this.movie.title || this.movie.name;
+    this.date = this.movie.release_date || this.movie.first_air_date;
+    this.rating = parseFloat(this.movie.vote_average.toFixed(1)) * 10;
+  }
 }
