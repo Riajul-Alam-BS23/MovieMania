@@ -18,7 +18,6 @@ export class MovieService {
     // const apiUrl = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`;
     const apiUrl = `${environment.BASE_URL}/${period}/popular?language=en-US&page=1`;
     const data= this.http.get<PaginationResponse<Movie[]>>(apiUrl);
-    console.log(data);
     return data;
   }
 
