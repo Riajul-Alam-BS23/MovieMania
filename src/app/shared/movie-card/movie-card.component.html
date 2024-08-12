@@ -1,10 +1,10 @@
 <mat-card class="card">
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <app-movie-rating class="content" [ratingSize]="50" [ratingNumber]="76"></app-movie-rating>
+    <img mat-card-image [src]="'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/' + movie.poster_path" alt="Photo of a Shiba Inu">
+    <app-movie-rating class="content" [ratingSize]="50" [ratingNumber]="rating"></app-movie-rating>
     <div class="text-container">
         <!-- <p class="title" style="color: black;font-size: 16px;">{{movie.title}}</p>
         <p class="date" style="color: black;">Mar 04, 2024</p> -->
-        <mat-card-title style="color: black;font-size: 16px; font-weight: bold;">{{movie.title}}</mat-card-title>
-        <mat-card-subtitle style="color: black;">Mar 04, 2024</mat-card-subtitle>
+        <mat-card-title style="color: black;font-size: 16px; font-weight: bold;">{{title}}</mat-card-title>
+        <mat-card-subtitle style="color: black;">{{date}}</mat-card-subtitle>
     </div>
 </mat-card>
