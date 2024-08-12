@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { MovieService } from '../../core/services/movie.service';
 import { select, Store } from '@ngrx/store';
 import * as MovieActions from '../../core/store/home/trending/trending.actions';
@@ -33,8 +33,7 @@ export class HomeComponent {
     // popular
     this.store.dispatch(PopularMovieActions.loadPopularMovies({ period: this.activePopularMovies }));
     this.store.dispatch(PopularMovieActions.loadPopularMovies({period:'movie'}));
-    // this.popularMovies$=this.store.pipe(
-    //   select(PopularMovieSelectors.selectPopularMovies)
+    // this.popularMovies$=this.store.pipe(hu08.l     //   select(PopularMovieSelectors.selectPopularMovies)
     // )
     this.popularMovies$=this.store.select(PopularMovieSelectors.selectPopularMovies);
   }

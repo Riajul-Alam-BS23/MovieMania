@@ -9,13 +9,13 @@ import { Trending_MOVIE_STATE_NAME } from "./trending/trending.selectors";
 import { TrendingMovieState } from "./trending/trending.state";
 
 export interface HomeState {
-    [Trending_MOVIE_STATE_NAME]: TrendingMovieState;
-    [Popular_MOVIE_STATE_NAME]: PopularMovieState;
+    Trending_MOVIE_STATE_NAME: TrendingMovieState;
+    Popular_MOVIE_STATE_NAME: PopularMovieState;
 }
 
 export const homeReducer ={
-    [Trending_MOVIE_STATE_NAME]: trendingMovieReducer,
-    [Popular_MOVIE_STATE_NAME]: popularMovieReducer
+    Trending_MOVIE_STATE_NAME: trendingMovieReducer,
+    Popular_MOVIE_STATE_NAME: popularMovieReducer
 };
 
 export const HomeEffects=[PopularMovieEffects, TrendingMovieEffects];

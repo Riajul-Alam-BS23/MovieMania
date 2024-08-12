@@ -8,7 +8,7 @@ export const selectHomeState = createFeatureSelector<HomeState>('home');
 
 export const selectTrendingMovieState = createSelector(
     selectHomeState,
-    (state: HomeState) => state[Trending_MOVIE_STATE_NAME]
+    (state: HomeState) => state.Trending_MOVIE_STATE_NAME
 );
 
 
