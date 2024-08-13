@@ -15,8 +15,8 @@ import { MovieRatingComponent } from './movie-rating/movie-rating.component';
   ],
   imports: [
     CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
+    // BrowserModule,
+    // BrowserAnimationsModule,
     MaterialModule
   ],
   exports: [

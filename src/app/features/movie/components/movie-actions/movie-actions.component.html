@@ -8,17 +8,23 @@
             <div class="score-text">User Score</div>
         </div> -->
         <app-movie-rating
-            [ratingSize]="50"
-            [ratingNumber]="86"
+            [ratingSize]="75"
+            [ratingNumber]="rating"
         ></app-movie-rating>
         <span style="padding-left: 5px;"> User Score</span>
         
        
 
-        <div class="emojis">
+        <!-- <div class="emojis">
             <mat-icon>sentiment_very_satisfied</mat-icon>
-            <mat-icon>favorite</mat-icon>
-        </div>
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+        </div> -->
+        <div class="emoji-container">
+            <mat-icon class="emoji-icon">favorite</mat-icon>
+            <mat-icon class="emoji-icon">tag_faces</mat-icon>
+            <mat-icon class="emoji-icon">face_surprise</mat-icon>
+          </div>
         <button mat-raised-button color="primary" class="vibe-button">
             What's your Vibe? <mat-icon>info</mat-icon>
         </button>

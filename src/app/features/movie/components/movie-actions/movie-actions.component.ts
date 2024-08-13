@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-movie-actions',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './movie-actions.component.css'
 })
 export class MovieActionsComponent {
-
+  @Input() rating;
 }

@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 export class MovieRatingComponent {
   @Input() ratingNumber: number=63;
   @Input() ratingSize: number;
+  ngOnInit() {
+    this.ratingNumber = Math.round(this.ratingNumber);
+  }
 }

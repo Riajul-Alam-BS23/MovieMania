@@ -1,0 +1,22 @@
+<div class="movie-card-subtitle">
+    <div>
+        <button class="allowType"><span>PG-13 </span></button>
+        <span>{{release_date}} ({{original_language}})  • </span>        
+    </div>
+    <div *ngFor="let genre of genres">
+        <span>
+            <a routerLink="">
+                {{genre.name}} ,
+            </a>
+            <!-- <a routerLink="">
+                Science Fiction,
+            </a>
+            <a routerLink="">
+                Thriller
+            </a> -->
+        </span>
+    </div>
+    <div>
+        <span>• {{runtimeHours}}h {{runtimeMin}}m</span>
+    </div>    
+</div>

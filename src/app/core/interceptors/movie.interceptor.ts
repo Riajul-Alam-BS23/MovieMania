@@ -6,7 +6,7 @@ import { environment } from '../../../environments/environment';
 @Injectable()
 export class MovieInterceptor implements HttpInterceptor{
     private token=environment.API_READ_ACCESS_TOKEN;
-    private accessToken='Bearer ${token}';
+    private accessToken=`Bearer ${this.token}`;
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const cloneRequest = req.clone({
             setHeaders:{

@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MovieComponent } from './features/movie/movie.component';
 
 const routes: Routes = [
   {
-    path:'movie',
-    component: MovieComponent
+    path:'',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path:'movie-details',
+    loadChildren: ()=> import('./features/movie/modules/movie-details/movie-details.module').then((m)=>m.MovieDetailsModule)
+  },
+  {
+    path:'home',
+    loadChildren: ()=> import('./features/home/home.module').then((m)=>m.HomeModule)
   }
+
 ];
 
 @NgModule({

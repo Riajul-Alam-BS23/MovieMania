@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MovieService } from '../../core/services/movie.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
@@ -22,6 +24,10 @@ export class MovieComponent {
     ],
     posterUrl: 'https://via.placeholder.com/300x450.png', // Replace with actual poster URL
   };
+  constructor(public movieService: MovieService,private route: ActivatedRoute){}
+  ngOnInit(): void {
+    // this.movieService.getSingleMovie()
+  }
   
 
   isFavorite = false;

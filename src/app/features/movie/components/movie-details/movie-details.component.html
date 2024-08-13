@@ -1,0 +1,51 @@
+
+<mat-card class="movie-card" *ngIf="movie$ | async as movie">
+    <div class="movie-card-content">
+      <div class="movie-image">
+        <img [src]="'https://image.tmdb.org/t/p/w440_and_h660_face' + movie.poster_path"
+
+          alt={{movie.title}}>
+      </div>
+      <div class="movie-details">
+        <mat-card-header class="movie-card-header">
+          <mat-card-title class="movie-card-title">
+            <a routerLink="">{{movie.title}}</a>
+          </mat-card-title>
+          <mat-card-subtitle >
+            <!-- <span>PG-13 </span>
+            <span>06/28/2024 (US) </span>
+            <span>
+              •
+              <a routerLink="">
+                Horror, 
+              </a>
+              <a routerLink="">
+                Science Fiction, 
+              </a>
+              <a routerLink="">
+                Thriller
+              </a>          
+            </span>
+            <span>• 1h 39m</span> -->
+            <app-genre-lists
+            [genres]="movie.genres"
+            [release_date]="movie.release_date"
+            [original_language]="movie.original_language"
+            [runtime]="movie.runtime"
+            ></app-genre-lists>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <app-movie-actions
+          [rating]="movie.vote_average*10"
+          ></app-movie-actions>
+          <p class="overview-title">Hear how it all began.</p>
+          <p class="overview">Overview</p>
+          <p>{{movie.overview}}</p>
+          <app-crew-lists
+          ></app-crew-lists>
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+  

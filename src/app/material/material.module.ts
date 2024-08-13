@@ -100,8 +100,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
         PortalModule,
         ScrollingModule,
-        BrowserModule,
-        BrowserAnimationsModule
+        // BrowserModule,
+        // BrowserAnimationsModule
       ],
   exports: [
     A11yModule,
@@ -151,8 +151,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
     PortalModule,
     ScrollingModule,
-    BrowserModule,
-    BrowserAnimationsModule
+    // BrowserModule,
+    // BrowserAnimationsModule
   ]
 })
 export class MaterialModule { }
