@@ -33,6 +33,9 @@ export class TrendingMovieEffects {
           ofType(MovieActions.loadTrendingMovies),
           switchMap(({ period }) =>
             this.movieService.getTrendingMovies(period).pipe(
+              tap(()=>{
+                console.log(`Loading Trending Movies for`);
+              }),
               map((response: PaginationResponse<Movie[]>) => MovieActions.loadTrendingMoviesSuccess({ movies: response.results })),
               catchError(error => of(MovieActions.loadTrendingMoviesFailure({ error: error.message })))
             )

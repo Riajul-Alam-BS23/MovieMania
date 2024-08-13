@@ -16,6 +16,8 @@ import { PopularMovieEffects } from '../../core/store/home/popular/popular.effec
 import { Trending_MOVIE_STATE_NAME } from '../../core/store/home/trending/trending.selectors';
 import { trendingMovieReducer } from '../../core/store/home/trending/trending.reducer';
 import { popularMovieReducer } from '../../core/store/home/popular/popular.reducer';
+import { RouterModule } from '@angular/router';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { popularMovieReducer } from '../../core/store/home/popular/popular.reduc
     SharedModule,
     EffectsModule.forFeature(HomeEffects),
     StoreModule.forFeature('home',homeReducer),
-    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    RouterModule,
+    HomeRoutingModule
   ],
   exports: [
     HomeComponent

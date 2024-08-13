@@ -17,6 +17,9 @@ export class PopularMovieEffects {
       ofType(MovieActions.loadPopularMovies),
       switchMap((options) =>
       this.movieService.getPopularMovies(options.period).pipe(
+       tap(()=>{
+          console.log(`Loading Popular Movies for`);
+        }),
           map((response: PaginationResponse<Movie[]>) =>
             MovieActions.loadPopularMoviesSuccess({ movies: response.results })
           ),

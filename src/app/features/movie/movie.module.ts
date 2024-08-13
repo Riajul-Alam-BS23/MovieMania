@@ -3,26 +3,33 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../material';
 import { MovieComponent } from './movie.component';
 import { MovieRoutingModule } from './movie-routing.module';
-import { MovieActionsComponent } from './movie-actions/movie-actions.component';
-import { CrewListsComponent } from './crew-lists/crew-lists.component';
+import { MovieActionsComponent } from './components/movie-actions/movie-actions.component';
+import { CrewListsComponent } from './components/crew-lists/crew-lists.component';
 import { SharedModule } from '../../shared/shared.module';
+import { MovieDetailsModule } from './modules/movie-details/movie-details.module';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { GenreListsComponent } from './components/genre-lists/genre-lists.component';
 
 
 
 @NgModule({
   declarations: [
-    MovieComponent,
-    MovieActionsComponent,
-    CrewListsComponent
+    // MovieComponent,
+    // MovieActionsComponent,
+    // CrewListsComponent,
+    // MovieDetailsComponent
+  
+    // GenreListsComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     MovieRoutingModule,
-    SharedModule
+    SharedModule,
+    // MovieDetailsModule
   ],
   exports: [
-    MovieComponent
+    // MovieComponent
   ]
 })
 export class MovieModule { }

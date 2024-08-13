@@ -2,7 +2,9 @@
     <mat-card class="crew-card" *ngFor="let crewMember of crewMembers">
         <mat-card-content>
             <h3>{{crewMember.name}}</h3>
-            <p *ngFor="let role of crewMember.roles">{{role}}</p>
+            <div class="roles">
+                <p *ngFor="let role of crewMember.roles">{{role}}, </p>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>

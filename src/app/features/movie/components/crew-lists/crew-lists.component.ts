@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-crew-lists',
@@ -6,8 +6,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./crew-lists.component.css']
 })
 export class CrewListsComponent {
-  crewMembers = [
-    { name: 'Michael Sarnoski', roles: ['Director, Screenplay, Story'] },
+  @Input() crewMembers = [
+    { name: 'Michael Sarnoski', roles: ['Director', 'Screenplay', 'Story'] },
     { name: 'Scott Beck', roles: ['Characters'] },
     { name: 'Bryan Woods', roles: ['Characters'] }
   ];

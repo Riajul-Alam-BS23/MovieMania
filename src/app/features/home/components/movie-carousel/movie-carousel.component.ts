@@ -5,6 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as MovieActions from '../../../../core/store/home/trending/trending.actions';
 import * as MovieSelectors from '../../../../core/store/home/trending/trending.selectors';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-carousel',
@@ -14,8 +15,11 @@ import * as MovieSelectors from '../../../../core/store/home/trending/trending.s
 export class MoviesCarouselComponent {
   @Input() title: string;
   @Input() movies$:Observable<any>;
-  constructor(private movieService:MovieService,private store:Store){
+  constructor(private movieService:MovieService,private store:Store,private router:Router) {
   }
   ngOnInit():void{
+  }
+  OnClick(){
+    this.router.navigate(['/movie-details', 718821]);
   }
 }

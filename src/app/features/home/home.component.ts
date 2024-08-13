@@ -16,14 +16,15 @@ export class HomeComponent {
   popularMovies$: Observable<any>;
 
   activeTrendingMovies: string = 'day';
-  activePopularMovies: string = 'movie';
+  activePopularMovies: string = 'tv';
 
   defaultSelectedTrendingMovies:boolean;
   defaultSelectedPopularMovies:boolean;
 
   constructor(private movieService:MovieService,private store:Store){
   }
-  ngOnInit():void{
+ngOnInit():void{
+    // console.log(this.movieService.getSingleMovie(718821));
     this.store.dispatch(MovieActions.loadTrendingMovies({ period: this.activeTrendingMovies }));
     this.store.dispatch(MovieActions.loadTrendingMovies({period:'day'}));
     // this.movies$=this.store.pipe(
@@ -37,6 +38,7 @@ export class HomeComponent {
     // )
     this.popularMovies$=this.store.select(PopularMovieSelectors.selectPopularMovies);
   }
+
 
   toggleTrendingMovies(period: string) {
     this.activeTrendingMovies = period;

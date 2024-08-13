@@ -1,5 +1,3 @@
-
-
 <div class="movies-carousel-section container">
     <div class="movies-carousel-header">
         <h5 class="carousel-header" style="font-size: 24px; margin-right: 20px;">{{title}}</h5>
@@ -7,9 +5,11 @@
     </div>
     <div class="movie-carousel-card-items">
         <div *ngFor="let movie of movies$ | async" class="movie-card-section">
-            <app-movie-card [movie]="movie">
-                <app-movie-rating class="content" [ratingSize]="50" [ratingNumber]="76"></app-movie-rating>
-            </app-movie-card>
+            <a (click)="OnClick()" class="movie-card-link">
+                <app-movie-card [movie]="movie">
+                    <app-movie-rating class="content" [ratingSize]="50" [ratingNumber]="76"></app-movie-rating>
+                </app-movie-card>
+            </a>
         </div>
     </div>
 </div>
