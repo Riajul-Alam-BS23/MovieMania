@@ -3,14 +3,10 @@
     width: 100%;
     height: 35%;
     padding: 30px 40px;
-    
-}
-h3{
-    line-height: 1.1;
 }
 
 .searchbar-content {
-    width: 100%;
+    width: 95%;
 }
 
 .search-input input{
@@ -36,4 +32,12 @@ h3{
     width: 100px;
     border-radius: 1.5rem;
     margin-left: -4rem;
+}
+
+.searchbar-title h3{
+    line-height: 1;
+    margin: 0;
+}
+.searchbar-title{
+    margin-bottom: 20px;
 }

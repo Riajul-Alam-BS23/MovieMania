@@ -3,8 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { selectMovieDetails } from '../../../../core/store/movie/movie-details/movie-details.selectors';
 import { Movie } from '../../../../core/models/api/MovieResponse';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { MovieDetails } from '../../../../core/models/api/MovieDetailsResponse';
+import { selectMoviesRecommendations } from '../../../../core/store/movie/movie-recommendations/movie-recommendations.selectors';
+import { loadRecommendationsMovies } from '../../../../core/store/movie/movie-recommendations/movie-recommendations.actions';
+import { DetailsType } from '../../../../core/models/types/DetailsType';
 
 @Component({
   selector: 'app-movie-details',
@@ -13,12 +16,20 @@ import { MovieDetails } from '../../../../core/models/api/MovieDetailsResponse';
 })
 export class MovieDetailsComponent {
   movie$: Observable<MovieDetails>;
-  constructor(private store:Store, private route:ActivatedRoute,private router:Router) { }
+  moviesRecommendations$: Observable<Movie[]>;
+  constructor(private store:Store, 
+    private route:ActivatedRoute,
+    private router:Router
+  ) { }
   ngOnInit(): void {
-    console.log("Movie Details")
+    const type = this.route.snapshot.paramMap.get('type');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const movies:DetailsType={
+      media_type: type,
+      id: id
+    }
     this.movie$= this.store.select(selectMovieDetails);
-    console.log("Movie ",this.movie$)
-    // this.router.navigate(['/details',718821]);
-
+    this.store.dispatch(loadRecommendationsMovies({movies: movies}));
+    this.moviesRecommendations$= this.store.select(selectMoviesRecommendations);
   }
 }

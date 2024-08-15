@@ -38,7 +38,7 @@ import { HomeRoutingModule } from './home-routing.module';
     HomeRoutingModule
   ],
   exports: [
-    HomeComponent
+    MoviesCarouselComponent
   ]
 })
 export class HomeModule { }

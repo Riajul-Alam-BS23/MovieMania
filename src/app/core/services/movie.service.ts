@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { MovieDetails } from '../models/api/MovieDetailsResponse';
+import { DetailsType } from '../models/types/DetailsType';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,8 @@ export class MovieService {
     // console.log(data);
     return data;
   }
-  getSingleMovie(movie_id:number): Observable<MovieDetails>{
-    const apiUrl = `${environment.BASE_URL}/movie/${movie_id}?language=en-US`
+  getSingleMovie(type:DetailsType): Observable<MovieDetails>{
+    const apiUrl = `${environment.BASE_URL}/${type.media_type}/${type.id}?language=en-US`
     this.http.get<MovieDetails>(apiUrl).subscribe(
       (data) => {
         console.log("Single movie =>", data);
@@ -35,6 +36,10 @@ export class MovieService {
     );
     return this.http.get<MovieDetails>(apiUrl);
 
+  }
+  getRecommendationsMovies(movies:any){
+    const apiUrl = `${environment.BASE_URL}/${movies.media_type}/${movies.id}/recommendations?language=en-US&page=1`;
+    return this.http.get<PaginationResponse<Movie[]>>(apiUrl);
   }
 
 }

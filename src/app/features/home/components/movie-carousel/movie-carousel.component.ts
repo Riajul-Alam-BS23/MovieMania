@@ -15,11 +15,12 @@ import { Router } from '@angular/router';
 export class MoviesCarouselComponent {
   @Input() title: string;
   @Input() movies$:Observable<any>;
+  @Input() type: string='movie'||'tv';
   constructor(private movieService:MovieService,private store:Store,private router:Router) {
   }
   ngOnInit():void{
   }
-  OnClick(){
-    this.router.navigate(['/movie-details', 718821]);
+  OnClick(movieId:number,type:string){
+    this.router.navigate(['', type || this.type,movieId]);
   }
 }
