@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:'movie-details',
+    path:'',
     loadChildren: ()=> import('./features/movie/modules/movie-details/movie-details.module').then((m)=>m.MovieDetailsModule)
   },
   {

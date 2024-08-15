@@ -8,3 +8,6 @@
     flex-direction: row;
     overflow-x: scroll;
 }
+.movie-card-section{
+    cursor: pointer;
+}

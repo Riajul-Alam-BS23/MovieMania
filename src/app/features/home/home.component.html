@@ -28,6 +28,7 @@
   <app-movie-carousel 
   [title]="'Popular'" 
   [movies$]="popularMovies$"
+  [type]="activePopularMovies"
   >
     <div class="button-container trending-movies-button-content">
       <button mat-button (click)="togglePopularMovies('movie')" [ngClass]="

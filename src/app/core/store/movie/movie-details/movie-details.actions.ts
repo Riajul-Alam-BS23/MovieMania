@@ -1,10 +1,11 @@
 
 
 import { createAction, props } from '@ngrx/store';
+import { DetailsType } from '../../../models/types/DetailsType';
 
 export const loadMovieDetails = createAction(
   '[Movie Details] Load Movie Details',
-  props<{ movieId: number }>()
+  props<{ details:DetailsType}>()
 );
 
 export const loadMovieDetailsSuccess = createAction(
@@ -16,3 +17,7 @@ export const loadMovieDetailsFailure = createAction(
   '[Movie Details] Load Movie Details Failure',
   props<{ error: string }>()
 );
+
+
+
+

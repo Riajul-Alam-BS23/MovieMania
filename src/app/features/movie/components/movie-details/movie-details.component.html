@@ -1,4 +1,5 @@
 
+<div class="container">
 <mat-card class="movie-card" *ngIf="movie$ | async as movie">
     <div class="movie-card-content">
       <div class="movie-image">
@@ -12,21 +13,6 @@
             <a routerLink="">{{movie.title}}</a>
           </mat-card-title>
           <mat-card-subtitle >
-            <!-- <span>PG-13 </span>
-            <span>06/28/2024 (US) </span>
-            <span>
-              •
-              <a routerLink="">
-                Horror, 
-              </a>
-              <a routerLink="">
-                Science Fiction, 
-              </a>
-              <a routerLink="">
-                Thriller
-              </a>          
-            </span>
-            <span>• 1h 39m</span> -->
             <app-genre-lists
             [genres]="movie.genres"
             [release_date]="movie.release_date"
@@ -39,7 +25,7 @@
           <app-movie-actions
           [rating]="movie.vote_average*10"
           ></app-movie-actions>
-          <p class="overview-title">Hear how it all began.</p>
+          <p class="overview-title">{{movie.tagline}}</p>
           <p class="overview">Overview</p>
           <p>{{movie.overview}}</p>
           <app-crew-lists
@@ -48,4 +34,23 @@
       </div>
     </div>
   </mat-card>
-  
+
+  <!-- Movie Recommendations -->
+   <div class="more-details-container">
+    <div class="details-left-container">
+      <div class="recommendations">
+        <app-movie-carousel 
+        [title]="'Recommendations'" 
+        [movies$]="moviesRecommendations$"
+        >
+        </app-movie-carousel>        
+      </div>
+    </div>
+    <div class="details-right-container">
+
+    </div>
+   </div>
+
+
+
+</div>

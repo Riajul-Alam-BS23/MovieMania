@@ -12,11 +12,12 @@ import { Observable } from 'rxjs';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  movies:any;
   movies$:Observable<any>;
   popularMovies$: Observable<any>;
 
   activeTrendingMovies: string = 'day';
-  activePopularMovies: string = 'tv';
+  activePopularMovies: string = 'movie';
 
   defaultSelectedTrendingMovies:boolean;
   defaultSelectedPopularMovies:boolean;
@@ -24,19 +25,23 @@ export class HomeComponent {
   constructor(private movieService:MovieService,private store:Store){
   }
 ngOnInit():void{
-    // console.log(this.movieService.getSingleMovie(718821));
     this.store.dispatch(MovieActions.loadTrendingMovies({ period: this.activeTrendingMovies }));
-    this.store.dispatch(MovieActions.loadTrendingMovies({period:'day'}));
+    this.store.dispatch(PopularMovieActions.loadPopularMovies({ period: this.activePopularMovies }));
+
+    // this.store.dispatch(MovieActions.loadTrendingMovies({period:'day'}));
     // this.movies$=this.store.pipe(
     //   select(MovieSelectors.selectTrendingMovies)
     // )
     this.movies$=this.store.select(MovieSelectors.selectTrendingMovies);
+    this.popularMovies$=this.store.select(PopularMovieSelectors.selectPopularMovies);
+
     // popular
-    this.store.dispatch(PopularMovieActions.loadPopularMovies({ period: this.activePopularMovies }));
-    this.store.dispatch(PopularMovieActions.loadPopularMovies({period:'movie'}));
+    // this.store.dispatch(PopularMovieActions.loadPopularMovies({period:'movie'}));
     // this.popularMovies$=this.store.pipe(hu08.l     //   select(PopularMovieSelectors.selectPopularMovies)
     // )
-    this.popularMovies$=this.store.select(PopularMovieSelectors.selectPopularMovies);
+    this.movies$.subscribe((data) => {
+      console.log('Data from Home page ==>>', data);
+    });
   }
 
 

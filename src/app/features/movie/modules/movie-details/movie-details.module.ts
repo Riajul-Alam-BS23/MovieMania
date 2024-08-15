@@ -16,10 +16,11 @@ import { CrewListsComponent } from '../../components/crew-lists/crew-lists.compo
 import { RouterModule, Routes } from '@angular/router';
 import { MovieDetailsResolver } from '../../resolvers/movie-details.resolver';
 import { GenreListsComponent } from '../../components/genre-lists/genre-lists.component';
+import { HomeModule } from '../../../home/home.module';
 
 const routes: Routes=[
   {
-    path: ':id',
+    path: ':type/:id',
     component: MovieDetailsComponent,
     resolve:{
       movie: MovieDetailsResolver
@@ -41,7 +42,8 @@ const routes: Routes=[
     EffectsModule.forFeature(MovieEffects),
     StoreModule.forFeature('movie',movieReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HomeModule
 
   ],
   // exports:[RouterModule]
