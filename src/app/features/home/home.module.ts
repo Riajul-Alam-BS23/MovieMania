@@ -18,13 +18,15 @@ import { trendingMovieReducer } from '../../core/store/home/trending/trending.re
 import { popularMovieReducer } from '../../core/store/home/popular/popular.reducer';
 import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './home-routing.module';
+import { CarouselItemsComponent } from './components/carousel-items/carousel-items.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     MoviesCarouselComponent,
-    SearchComponent
+    SearchComponent,
+    CarouselItemsComponent
   ],
   imports: [
     CommonModule,

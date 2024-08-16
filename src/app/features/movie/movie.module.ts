@@ -9,6 +9,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { MovieDetailsModule } from './modules/movie-details/movie-details.module';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { GenreListsComponent } from './components/genre-lists/genre-lists.component';
+import { MovieListsComponent } from './components/movie-lists/movie-lists.component';
+import { MovieListsCardComponent } from './components/movie-lists-card/movie-lists-card.component';
 
 
 
@@ -20,6 +22,9 @@ import { GenreListsComponent } from './components/genre-lists/genre-lists.compon
     // MovieDetailsComponent
   
     // GenreListsComponent
+  
+    // MovieListsComponent,
+    // MovieListsCardComponent
   ],
   imports: [
     CommonModule,

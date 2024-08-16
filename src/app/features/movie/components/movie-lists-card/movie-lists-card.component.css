@@ -1,10 +1,7 @@
-
-.movies-carousel-header{
-    display: flex;
-}
 .movie-carousel-card-items{
     display: flex;
-    overflow-x: scroll;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .movie-card-section{
     cursor: pointer;

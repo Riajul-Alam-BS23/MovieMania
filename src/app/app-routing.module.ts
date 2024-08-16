@@ -9,6 +9,11 @@ const routes: Routes = [
   },
   {
     path:'',
+    loadChildren:()=>import('./features/movie/modules/movie-lists/movie-lists.module').then((m)=>m.MovieListsModule)
+  }
+  ,
+  {
+    path:'',
     loadChildren: ()=> import('./features/movie/modules/movie-details/movie-details.module').then((m)=>m.MovieDetailsModule)
   },
   {

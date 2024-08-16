@@ -1,3 +1,5 @@
+
+
 import { Component, Input } from '@angular/core';
 import { Movie } from '../../core/models/api/MovieResponse';
 
@@ -7,6 +9,7 @@ import { Movie } from '../../core/models/api/MovieResponse';
   styleUrls: ['./movie-card.component.css']
 })
 export class MovieCardComponent {
+  
   @Input() movie: Movie;
   title:string;
   date:string;
@@ -17,3 +20,7 @@ export class MovieCardComponent {
     this.rating = parseFloat(this.movie.vote_average.toFixed(1)) * 10;
   }
 }
+
+
+
+
