@@ -21,6 +21,6 @@ export class MoviesCarouselComponent {
   ngOnInit():void{
   }
   OnClick(movieId:number,type:string){
-    this.router.navigate(['', type || this.type,movieId]);
+    this.router.navigate(['details', type || this.type,movieId]);
   }
 }

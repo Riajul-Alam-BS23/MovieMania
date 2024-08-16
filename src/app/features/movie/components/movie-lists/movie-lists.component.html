@@ -1,0 +1,32 @@
+
+
+<div class="movies-container">
+    <div class="movies-header">
+        <h3 class="movies-header-title">'Popular' Movies</h3>
+    </div>
+    <div class="movies-lists-content">
+        <div class="movies-sort-filter-container">
+
+        </div>
+        <div class="movies-lists-container">
+            <div class="movies-lists-card">
+                <app-movie-lists-card
+                [movies$]="movies$"
+                ></app-movie-lists-card>
+            </div>
+            <div class="movies-lists-loading-button">
+                <button mat-button class="load-more-button" (click)="loadMore()">
+                    Load More
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

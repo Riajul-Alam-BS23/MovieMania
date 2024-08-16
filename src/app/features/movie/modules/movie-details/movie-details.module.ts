@@ -20,7 +20,7 @@ import { HomeModule } from '../../../home/home.module';
 
 const routes: Routes=[
   {
-    path: ':type/:id',
+    path: 'details/:type/:id',
     component: MovieDetailsComponent,
     resolve:{
       movie: MovieDetailsResolver
