@@ -13,7 +13,7 @@ const _movieListsReducer = createReducer(
         movies:[
              ...state.movies,
              ...movies
-            ],
+        ],
         loading: false
     })),
     on(MovieActions.loadListsMoviesFailure, (state, { error }) => ({
