@@ -29,6 +29,7 @@ export class MovieDetailsComponent {
       id: id
     }
     this.movie$= this.store.select(selectMovieDetails);
+    console.log("Movie details --->",this.movie$);
     this.store.dispatch(loadRecommendationsMovies({movies: movies}));
     this.moviesRecommendations$= this.store.select(selectMoviesRecommendations);
   }

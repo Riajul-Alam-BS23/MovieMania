@@ -1,6 +1,6 @@
 
 <div class="container">
-<mat-card class="movie-card" *ngIf="movie$ | async as movie">
+<mat-card class="movie-card" *ngIf="movie$ | async as movie" [ngStyle]="{'background-image': 'url(' + 'https://image.tmdb.org/t/p/w440_and_h660_face/pjnD08FlMAIXsfOLKQbvmO0f0MD.jpg' + ')'}">
     <div class="movie-card-content">
       <div class="movie-image">
         <img [src]="'https://image.tmdb.org/t/p/w440_and_h660_face' + movie.poster_path"
