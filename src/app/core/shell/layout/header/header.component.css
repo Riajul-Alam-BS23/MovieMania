@@ -12,11 +12,17 @@
 .spacer {
     flex: 1 1 auto;
 }
+.dropdown-menu{
+    min-width: 170px;
+}
+
 
 mat-toolbar button {
     color: white;
     font-size: 18px;
-    margin-right: 5px;
+    /* margin-right: 5px; */
+    padding-right: 10px;
+    padding-bottom: 5px;
 }
 
 .profile-button {
@@ -45,3 +51,20 @@ mat-toolbar button {
 
   
 /* Search */
+
+
+.temp{
+    color: white;
+    font-size: 18px;
+    margin-right: 5px;
+}
+.temp button{
+    color: white !important;
+}
+.mat-button:hover, 
+.mat-raised-button:hover, 
+.mat-flat-button:hover, 
+.mat-stroked-button:hover {
+  box-shadow: none; /* Removes the shadow */
+  background-color: inherit; /* Keeps the background color unchanged */
+}

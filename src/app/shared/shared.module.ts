@@ -5,13 +5,15 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MaterialModule } from '../material';
 import { CommonModule } from '@angular/common';
 import { MovieRatingComponent } from './movie-rating/movie-rating.component';
+import { CustomDropdownMenuComponent } from './custom-dropdown-menu/custom-dropdown-menu.component';
 
 
 
 @NgModule({
   declarations: [
     MovieCardComponent,
-    MovieRatingComponent
+    MovieRatingComponent,
+    CustomDropdownMenuComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { MovieRatingComponent } from './movie-rating/movie-rating.component';
   ],
   exports: [
     MovieCardComponent,
-    MovieRatingComponent
+    MovieRatingComponent,
+    CustomDropdownMenuComponent
 
   ]
 })
