@@ -22,7 +22,7 @@ export class MovieNowPlayingListsEffects {
               tap(()=>{
                 console.log(`Loading Lists Movies for`);
               }),
-              map((response: PaginationResponse<Movie[]>) => MovieActions.loadNowPlayingListsMoviesSuccess({ movies: response.results })),
+              map((response: PaginationResponse<Movie[]>) => MovieActions.loadNowPlayingListsMoviesSuccess({ movies: response })),
               catchError(error => of(MovieActions.loadNowPlayingListsMoviesFailure({ error: error.message })))
             )
           )

@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import * as MovieActions from './popular.actions'
+import * as MovieActions from './popular.actions';
 import { initialState } from './popular.state';
 
 const _moviePopularListsReducer = createReducer(
@@ -10,10 +10,13 @@ const _moviePopularListsReducer = createReducer(
     })),
     on(MovieActions.loadPopularListsMoviesSuccess, (state, { movies }) => ({
         ...state,
-        movies:[
-             ...state.movies,
-             ...movies
-        ],
+        movies: {
+            ...state.movies,
+            page: movies.page,
+            results: [...state.movies.results, ...movies.results],
+            total_pages: movies.total_pages,
+            total_results: movies.total_results,
+        },
         loading: false
     })),
     on(MovieActions.loadPopularListsMoviesFailure, (state, { error }) => ({
@@ -23,8 +26,6 @@ const _moviePopularListsReducer = createReducer(
     }))
 );
 
-export function moviePopularListsReducer(state,action){
+export function moviePopularListsReducer(state, action) {
     return _moviePopularListsReducer(state, action);
 }
-
-

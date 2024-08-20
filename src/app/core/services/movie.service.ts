@@ -75,7 +75,7 @@ export class MovieService {
   // final
   getListsMovies(listsType:DataType): Observable<PaginationResponse<Movie[]>> {
     console.log("getMovieLists =======>",listsType)
-    const apiUrl = `${this.token}/${listsType.media_type}/${listsType.media_type_type}?language=en-US&page=${listsType.page}`;
+    const apiUrl = `${this.token}/${listsType.media}/${listsType.media_type}?language=en-US&page=${listsType.page}`;
     console.log("i am on testing listq")
     return this.http.get<PaginationResponse<Movie[]>>(apiUrl);
   }

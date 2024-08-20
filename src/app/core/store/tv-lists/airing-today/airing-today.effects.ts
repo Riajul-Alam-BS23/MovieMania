@@ -22,7 +22,7 @@ export class TvAiringTodayListsEffects {
               tap(()=>{
                 console.log(`Loading Lists Movies for`);
               }),
-              map((response: PaginationResponse<Movie[]>) => MovieActions.loadAiringTodayListsTvSuccess({ movies: response.results })),
+              map((response: PaginationResponse<Movie[]>) => MovieActions.loadAiringTodayListsTvSuccess({ movies: response })),
               catchError(error => of(MovieActions.loadAiringTodayListsTvFailure({ error: error.message })))
             )
           )

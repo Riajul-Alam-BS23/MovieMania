@@ -22,12 +22,10 @@ export class TvTopRatedListsEffects {
               tap(()=>{
                 console.log(`Loading Lists Movies for`);
               }),
-              map((response: PaginationResponse<Movie[]>) => MovieActions.loadTopRatedListsTvSuccess({ movies: response.results })),
+              map((response: PaginationResponse<Movie[]>) => MovieActions.loadTopRatedListsTvSuccess({ movies: response })),
               catchError(error => of(MovieActions.loadTopRatedListsTvFailure({ error: error.message })))
             )
           )
         )
       );
-    
-
 }
