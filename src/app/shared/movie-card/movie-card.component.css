@@ -1,0 +1,39 @@
+.card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 150px;
+    height: 386px;
+    margin-left: 10px;
+    box-shadow: none;
+}
+
+img {
+    width: 100%;
+    height: 225px;
+    border-radius: 5%;
+}
+
+
+.text-container {
+    color: white;
+}
+
+.title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text-container {
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+.content{
+    display: block;
+    width: 50%;
+    margin-bottom: -20px;
+    position: relative;
+    transform: translate(10%,-50%);
+}

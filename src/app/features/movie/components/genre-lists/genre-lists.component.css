@@ -1,0 +1,20 @@
+.movie-card-subtitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-card-subtitle span {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.movie-card-subtitle span a {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+.allowType span{
+  color:white
+}
+.allowType{
+  background-color: #1c1c1c;
+}

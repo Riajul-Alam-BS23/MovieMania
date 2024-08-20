@@ -1,0 +1,56 @@
+
+<div class="container">
+<mat-card class="movie-card" *ngIf="movie$ | async as movie" [ngStyle]="{'background-image': 'url(' + 'https://image.tmdb.org/t/p/w440_and_h660_face/pjnD08FlMAIXsfOLKQbvmO0f0MD.jpg' + ')'}">
+    <div class="movie-card-content">
+      <div class="movie-image">
+        <img [src]="'https://image.tmdb.org/t/p/w440_and_h660_face' + movie.poster_path"
+
+          alt={{movie.title}}>
+      </div>
+      <div class="movie-details">
+        <mat-card-header class="movie-card-header">
+          <mat-card-title class="movie-card-title">
+            <a routerLink="">{{movie.title}}</a>
+          </mat-card-title>
+          <mat-card-subtitle >
+            <app-genre-lists
+            [genres]="movie.genres"
+            [release_date]="movie.release_date"
+            [original_language]="movie.original_language"
+            [runtime]="movie.runtime"
+            ></app-genre-lists>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <app-movie-actions
+          [rating]="movie.vote_average*10"
+          ></app-movie-actions>
+          <p class="overview-title">{{movie.tagline}}</p>
+          <p class="overview">Overview</p>
+          <p>{{movie.overview}}</p>
+          <app-crew-lists
+          ></app-crew-lists>
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+
+  <!-- Movie Recommendations -->
+   <div class="more-details-container">
+    <div class="details-left-container">
+      <div class="recommendations">
+        <app-movie-carousel 
+        [title]="'Recommendations'" 
+        [movies$]="moviesRecommendations$"
+        >
+        </app-movie-carousel>        
+      </div>
+    </div>
+    <div class="details-right-container">
+
+    </div>
+   </div>
+
+
+
+</div>

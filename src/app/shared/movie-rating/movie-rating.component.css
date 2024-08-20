@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.rating-spinner {
+    background-color: rgb(87, 43, 43);
+    border-radius: 50%;
+}
+
+.rating-text {
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}

@@ -1,15 +1,13 @@
-
-
-
 .home-searchbar {
     background-color: #006c9c;
     padding: 30px 40px;
 }
 
-.home-search{
+.home-search {
     width: 100%;
 }
-.home-search-input{
+
+.home-search-input {
     width: 90%;
 }
 
@@ -17,8 +15,61 @@
 .input-inside-search {
     color: #f1f1f1 !important;
     background-color: #9c0041 !important;
-    /* width: 100px; */
-    /* height: 58px !important; */
-    position: fixed;
+    /* position: fixed; */
 }
 
+
+
+/* Trending Movies */
+.selected{
+    transition: all .3s ease-in-out;
+    position: absolute;
+    background-color:rgb(3, 37, 65);
+    border-radius: 30px;
+    height: 2rem;
+    width: 50%;
+    top: 0;
+}
+.selectedPopular{
+    transition: all .3s ease-in-out;
+    position: absolute;
+    background-color:rgb(3, 37, 65);
+    border-radius: 30px;
+    height: 2rem;
+    width: 50%;
+    top: 0;  
+}
+.p-left{
+    left: 0;
+}
+.p-right{
+    left:50%;
+}
+.popular-left{
+    left: 0;
+}
+.popular-right{
+    left:50%;
+}
+.button-container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 0 1rem;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 30px;
+    gap: 1rem;
+    width: 200px;
+}
+.textColor{
+    color: #52e1b4 !important;
+}
+.defaultColor{
+    color: black !important;
+}
+
+.trending-movies-container{
+    padding: 10px 40px;
+}

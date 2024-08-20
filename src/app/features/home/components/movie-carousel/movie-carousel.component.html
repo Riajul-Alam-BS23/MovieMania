@@ -1,0 +1,16 @@
+<div class="movies-carousel-section container">
+    <div class="movies-carousel-header">
+        <h5 class="carousel-header" style="font-size: 24px; margin-right: 20px;">{{title}}</h5>
+        <ng-content select=".trending-movies-button-content"></ng-content>
+    </div>
+    <div class="movie-carousel-card-items">
+        <div *ngFor="let movie of movies$ | async" class="movie-card-section">
+            <a (click)="OnClick(movie.id,movie.media_type)" class="movie-card-link"  
+            [ngStyle]="{'background-image': + 'https://media.themoviedb.org/t/p/w188_and_h282_bestv2/'+'url(' + movie.backdrop_path + ')'}">
+                <app-movie-card [movie]="movie">
+                    <app-movie-rating class="content" [ratingSize]="50" [ratingNumber]="76"></app-movie-rating>
+                </app-movie-card>
+            </a>
+        </div>
+    </div>
+</div>

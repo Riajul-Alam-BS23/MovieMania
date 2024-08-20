@@ -1,0 +1,50 @@
+
+<div class="rating-container">
+    <div class="user-interactions">
+        <!-- <div class="user-score">
+            <div class="circle">
+                <span>70%</span>
+            </div>
+            <div class="score-text">User Score</div>
+        </div> -->
+        <app-movie-rating
+            [ratingSize]="75"
+            [ratingNumber]="rating"
+        ></app-movie-rating>
+        <span style="padding-left: 5px;"> User Score</span>
+        
+       
+
+        <!-- <div class="emojis">
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+        </div> -->
+        <div class="emoji-container">
+            <mat-icon class="emoji-icon">favorite</mat-icon>
+            <mat-icon class="emoji-icon">tag_faces</mat-icon>
+            <mat-icon class="emoji-icon">face_surprise</mat-icon>
+          </div>
+        <button mat-raised-button color="primary" class="vibe-button">
+            What's your Vibe? <mat-icon>info</mat-icon>
+        </button>
+    </div>
+    <div class="action-buttons">
+        <button mat-icon-button>
+            <mat-icon>format_list_bulleted</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>bookmark</mat-icon>
+        </button>
+        <div class="trailer">
+            <button mat-icon-button>
+                <mat-icon>play_arrow</mat-icon>
+            </button>
+            <p style="margin: 0; display: flex;justify-content: center;align-items: center;">Play Trailer</p>
+        </div>
+        
+    </div>
+</div>

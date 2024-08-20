@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,9 @@ import { MatMenuTrigger } from '@angular/material/menu';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  openMyMenu(menuTrigger: MatMenuTrigger) {
-    menuTrigger.openMenu();
-  }
-  @ViewChild(MatMenuTrigger) menuTrigger!: MatMenuTrigger;
-
-  openMenu(trigger: MatMenuTrigger) {
-    trigger.openMenu();
+  constructor(private router: Router) { }
+  onClick(url1: string, url2: string){
+    this.router.navigate(['', url1 ,url2]);
   }
 }
 

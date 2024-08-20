@@ -11,15 +11,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../../shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -28,11 +31,33 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+    SharedModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent
-  ]
+  ],
+      providers: [
+      ],
 })
 export class LayoutModule { }
+
+// import { NgModule } from "@angular/core";
+// import { LayoutModule } from "./shell/layout/layout.module";
+// import { BrowserModule } from "@angular/platform-browser";
+
+
+// @NgModule({
+//     imports: [
+//         LayoutModule
+//     ],
+//     exports: [
+//         BrowserModule,
+//         LayoutModule
+//     ],
+//     providers: [
+//     ],
+// })
+// export class CoreModule{}

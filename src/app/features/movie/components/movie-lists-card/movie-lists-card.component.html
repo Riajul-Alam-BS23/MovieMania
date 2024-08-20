@@ -1,0 +1,10 @@
+<div class="movie-carousel-card-items">
+    <div *ngFor="let movie of movies$ | async" class="movie-card-section">
+        <a (click)="OnClick(movie.id)" class="movie-card-link"
+            [ngStyle]="{'background-image': + 'https://media.themoviedb.org/t/p/w188_and_h282_bestv2/'+'url(' + movie.backdrop_path + ')'}">
+            <app-movie-card [movie]="movie">
+                <app-movie-rating class="content" [ratingSize]="50" [ratingNumber]="76"></app-movie-rating>
+            </app-movie-card>
+        </a>
+    </div>
+</div>
