@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { Movie } from '../../../models/api/MovieResponse';
 import { ListsType } from '../../../models/types/DetailsType';
+import { PaginationResponse } from '../../../models/api/PaginationResponse';
 
 export const loadAiringTodayListsTv = createAction(
     '[Airing Today Lists Tv] Load Airing Today Lists Tv',
@@ -9,7 +10,7 @@ export const loadAiringTodayListsTv = createAction(
 
 export const loadAiringTodayListsTvSuccess = createAction(
     '[Airing Today Lists Tv] Load Airing Today Lists Tv Success',
-    props<{ movies: Movie[] }>()
+    props<{ movies: PaginationResponse<Movie[]>}>()
 );
 
 export const loadAiringTodayListsTvFailure = createAction(

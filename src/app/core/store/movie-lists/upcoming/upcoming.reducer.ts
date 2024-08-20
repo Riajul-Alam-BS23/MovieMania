@@ -10,10 +10,13 @@ const _movieUpcomingListsReducer = createReducer(
     })),
     on(MovieActions.loadUpcomingListsMoviesSuccess, (state, { movies }) => ({
         ...state,
-        movies:[
-             ...state.movies,
-             ...movies
-        ],
+        movies: {
+            ...state.movies,
+            page: movies.page,
+            results: [...state.movies.results, ...movies.results],
+            total_pages: movies.total_pages,
+            total_results: movies.total_results,
+        },
         loading: false
     })),
     on(MovieActions.loadUpcomingListsMoviesFailure, (state, { error }) => ({

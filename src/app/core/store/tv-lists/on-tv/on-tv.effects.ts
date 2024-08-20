@@ -22,7 +22,7 @@ export class TvOnTvListsEffects {
               tap(()=>{
                 console.log(`Loading Lists Movies for`);
               }),
-              map((response: PaginationResponse<Movie[]>) => MovieActions.loadOnTvListsTvSuccess({ movies: response.results })),
+              map((response: PaginationResponse<Movie[]>) => MovieActions.loadOnTvListsTvSuccess({ movies: response })),
               catchError(error => of(MovieActions.loadOnTvListsTvFailure({ error: error.message })))
             )
           )

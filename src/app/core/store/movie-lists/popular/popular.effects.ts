@@ -20,9 +20,9 @@ export class MoviePopularListsEffects {
           switchMap(({ movies }) =>
             this.movieService.getListsMovies(movies).pipe(
               tap(()=>{
-                console.log(`Loading Lists Movies for`);
+                console.log(`Loading popular Lists Movies for testing`);
               }),
-              map((response: PaginationResponse<Movie[]>) => MovieActions.loadPopularListsMoviesSuccess({ movies: response.results })),
+              map((response: PaginationResponse<Movie[]>) => MovieActions.loadPopularListsMoviesSuccess({ movies: response })),
               catchError(error => of(MovieActions.loadPopularListsMoviesFailure({ error: error.message })))
             )
           )

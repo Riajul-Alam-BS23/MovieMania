@@ -20,9 +20,9 @@ export class MovieUpcomingListsEffects {
           switchMap(({ movies }) =>
             this.movieService.getListsMovies(movies).pipe(
               tap(()=>{
-                console.log(`Loading Lists Movies for`);
+                console.log(`From Upcoming Effects `);
               }),
-              map((response: PaginationResponse<Movie[]>) => MovieActions.loadUpcomingListsMoviesSuccess({ movies: response.results })),
+              map((response: PaginationResponse<Movie[]>) => MovieActions.loadUpcomingListsMoviesSuccess({ movies: response })),
               catchError(error => of(MovieActions.loadUpcomingListsMoviesFailure({ error: error.message })))
             )
           )

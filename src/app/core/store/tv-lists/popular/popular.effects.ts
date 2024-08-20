@@ -22,7 +22,7 @@ export class TvPopularListsEffects {
               tap(()=>{
                 console.log(`Loading Lists Movies for`);
               }),
-              map((response: PaginationResponse<Movie[]>) => MovieActions.loadPopularListsTvSuccess({ movies: response.results })),
+              map((response: PaginationResponse<Movie[]>) => MovieActions.loadPopularListsTvSuccess({ movies: response })),
               catchError(error => of(MovieActions.loadPopularListsTvFailure({ error: error.message })))
             )
           )

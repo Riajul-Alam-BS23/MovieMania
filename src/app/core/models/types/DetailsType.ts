@@ -9,15 +9,15 @@ export interface DetailsType{
 
 
 export interface DataType{
-    media_type?: string;
+    media?: string;
     // recommendations?: string;
     page?: number;
-    media_type_type?: string;
+    media_type?: string;
 }
 
 export interface ListsType{
-    media_type?: string;
+    media?: string;
     // recommendations?: string;
     page?: number;
-    media_type_type?: string;
+    media_type?: string;
 }
