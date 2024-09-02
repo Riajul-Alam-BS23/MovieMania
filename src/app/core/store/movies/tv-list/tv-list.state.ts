@@ -28,7 +28,7 @@ export const tvListsFeature = createFeature({
             Tvs: {
                 ...state.Tvs,
                 page: Tvs.page,
-                results: [...state.Tvs.results, ...Tvs.results],
+                results:(Tvs.page>=2? [...Tvs.results,...state.Tvs.results]: Tvs.results),
                 total_pages: Tvs.total_pages,
                 total_results: Tvs.total_results,
             },
