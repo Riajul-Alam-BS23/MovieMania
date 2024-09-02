@@ -2,11 +2,13 @@
 
 <div class="movies-container">
     <div class="movies-header">
-        <h3 class="movies-header-title">'Popular' Movies</h3>
+        <h3 class="movies-header-title">{{mediaSubType |uppercase}} {{media |uppercase}}</h3>
     </div>
     <div class="movies-lists-content">
         <div class="movies-sort-filter-container">
-
+            <app-sidebar
+            (showSearchButton)="onSortChange($event)"
+            ></app-sidebar>
         </div>
         <div class="movies-lists-container">
             <div class="movies-lists-card">
@@ -22,6 +24,9 @@
             </div>
         </div>
     </div>
+    <!-- <button *ngIf="showSearchButton" mat-button class="search-button" (click)="searchButton()">
+        Search
+    </button> -->
 </div>
 
 

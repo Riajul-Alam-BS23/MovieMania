@@ -1,11 +1,11 @@
 import { createAction, props } from '@ngrx/store';
 import { Movie } from '../../../models/api/MovieResponse';
-import { ListsType } from '../../../models/types/DetailsType';
+import { Type } from '../../../models/types/DetailsType';
 import { PaginationResponse } from '../../../models/api/PaginationResponse';
 
 export const loadPopularListsMovies = createAction(
     '[Popular Lists] Load Popular Lists Movies',
-    props<{movies:ListsType }>()
+    props<{movies:Type }>()
 );
 
 export const loadPopularListsMoviesSuccess = createAction(
