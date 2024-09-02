@@ -1,0 +1,200 @@
+<div class="container">
+  <div class="sort-container">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header (click)="onSortOpen()">
+          <div class="sortHeader">
+            <mat-panel-title>Sort</mat-panel-title>
+            <mat-icon class="sort-icon">{{ sortIcon }}</mat-icon>
+          </div>
+        </mat-expansion-panel-header>
+        <mat-divider class="full-width-divider"></mat-divider>
+        <div class="sortContent">
+          <p class="sort-content-customP">Sort Results By</p>
+          <mat-form-field appearance="fill" class="custom-form-field">
+            <mat-select
+              [(value)]="selectedSort"
+              (selectionChange)="onSortChange($event)"
+            >
+              <mat-option
+                *ngFor="let option of sortOptions"
+                [value]="option.value"
+              >
+                {{ option.display }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="filter-container">
+    <mat-expansion-panel hideToggle [expanded]="true">
+      <mat-expansion-panel-header (click)="onFilterOpen()">
+        <div class="sortHeader">
+          <mat-panel-title>Filters</mat-panel-title>
+          <mat-icon class="sort-icon">{{ filtersIcon }}</mat-icon>
+        </div>
+      </mat-expansion-panel-header>
+      <mat-divider class="full-width-divider"></mat-divider>
+
+      <div class="filter-content">
+        <!-- Show Me Section -->
+        <div class="query-section">
+          <p>Show Me</p>
+          <mat-radio-group
+            aria-label="Select an option"
+            [(ngModel)]="showMeSelectedOption"
+          >
+            <mat-radio-button value="everything">Everything</mat-radio-button
+            ><br />
+            <mat-radio-button value="not-seen"
+              >Movies I Haven't Seen</mat-radio-button
+            ><br />
+            <mat-radio-button value="seen">Movies I Have Seen</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <mat-divider class="full-width-divider"></mat-divider>
+
+        <!-- Release Dates Section -->
+        <div class="query-section">
+          <p>Release Dates</p>
+          <!-- <mat-checkbox>Search all releases?</mat-checkbox> -->
+
+          <div class="date-range">
+            <div class="release-forms-field">
+              <mat-label>from</mat-label>
+              <mat-form-field>
+                <input
+                  matInput
+                  [matDatepicker]="startDatePicker"
+                  [(ngModel)]="selectedReleaseDateFrom"
+                />
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="startDatePicker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #startDatePicker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div class="release-forms-field">
+              <mat-label>to</mat-label>
+              <mat-form-field>
+                <input
+                  matInput
+                  [matDatepicker]="endDatePicker"
+                  [(ngModel)]="selectedReleaseDateTo"
+                />
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="endDatePicker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #endDatePicker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <mat-divider class="full-width-divider"></mat-divider>
+
+
+        <div class="query-section">
+            <p>Genres</p>
+            <div class="genre-list">
+              <div 
+                *ngFor="let genre of genres$ | async" 
+                class="genre-item"
+                [class.selected]="isSelected(genre.id.toString())"
+                (click)="toggleGenreSelection(genre.id.toString())"
+              >
+                {{ genre.name }}
+              </div>
+            </div>
+          </div>
+          
+          
+        <mat-divider class="full-width-divider"></mat-divider>
+        <div class="query-section">
+            <p>Certification</p>
+        </div>
+        <mat-divider class="full-width-divider"></mat-divider>
+        
+
+          <div class="slider-container">
+            <div class="query-section">
+                <p>User Score</p>
+                <mat-slider 
+                min="0" 
+                max="10" 
+                step="1" 
+                showTickMarks 
+                discrete
+                >
+                    <input 
+                    value="0" 
+                    [(ngModel)]="firstUserScoreValue" 
+                    matSliderStartThumb 
+                    />
+                    <input 
+                    value="10" 
+                    [(ngModel)]="lastUserScoreValue" 
+                    matSliderEndThumb 
+                    />
+                </mat-slider>
+            </div>
+            <mat-divider class="full-width-divider"></mat-divider>
+
+            <div class="query-section">
+                <p>Minimum User Votes</p>
+                <mat-slider 
+                min="0" 
+                max="500" 
+                step="50" 
+                showTickMarks 
+                discrete
+                >
+                    <input 
+                    value="0" 
+                    [(ngModel)]="userVoteValue" 
+                    matSliderThumb 
+                    />
+                </mat-slider>
+            </div>
+            <mat-divider class="full-width-divider"></mat-divider>
+            <div class="query-section">
+                <p>Runtime</p>
+                <mat-slider 
+                min="0" 
+                max="420" 
+                step="15" 
+                showTickMarks 
+                discrete
+                >
+                    <input 
+                    value="0" 
+                    [(ngModel)]="firstRuntimeValue" 
+                    matSliderStartThumb 
+                    />
+                    <input 
+                    value="400" 
+                    [(ngModel)]="lastRuntimeValue" 
+                    matSliderEndThumb 
+                    />
+                </mat-slider>
+            </div>
+            <mat-divider class="full-width-divider"></mat-divider>
+            <div class="query-section">
+                <p>Keywords</p>
+                <mat-form-field appearance="outline" class="keywords-input">
+                    <input  matInput placeholder="Filter by keywords..." [(ngModel)]="keywords">
+                  </mat-form-field>
+            </div>
+          </div>
+      </div>
+    </mat-expansion-panel>
+  </div>
+  <button mat-button class="search-button" (click)="updateQueryUrl()">
+    Search
+</button>
+</div>

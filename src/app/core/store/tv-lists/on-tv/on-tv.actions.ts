@@ -1,11 +1,11 @@
 import { createAction, props } from '@ngrx/store';
 import { Movie } from '../../../models/api/MovieResponse';
-import { ListsType } from '../../../models/types/DetailsType';
+import { Type } from '../../../models/types/DetailsType';
 import { PaginationResponse } from '../../../models/api/PaginationResponse';
 
 export const loadOnTvListsTv = createAction(
     '[TvOnTv Lists] Load TvOnTv Lists Tv',
-    props<{movies:ListsType }>()
+    props<{movies:Type }>()
 );
 
 export const loadOnTvListsTvSuccess = createAction(

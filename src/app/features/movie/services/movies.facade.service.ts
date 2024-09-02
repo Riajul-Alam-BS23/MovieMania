@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectMoviesPopularLists } from '../../../core/store/movie-lists/popular/popular.selectors';
 import { loadPopularListsMovies } from '../../../core/store/movie-lists/popular/popular.actions';
-import { ListsType } from '../../../core/models/types/DetailsType';
+import { Type } from '../../../core/models/types/DetailsType';
 import { loadTopRatedListsMovies } from '../../../core/store/movie-lists/top-rated/top-rated.actions';
 import { selectMoviesTopRatedLists } from '../../../core/store/movie-lists/top-rated/top-rated.selectors';
 import { loadNowPlayingListsMovies } from '../../../core/store/movie-lists/now-playing/now-playing.actions';
@@ -26,7 +26,7 @@ export class MoviesFacadeService {
   constructor(
     private store:Store
   ) { }
-  dispatchData(listType:ListsType){
+  dispatchData(listType:Type){
     const listsActionMap={
       'movie/popular':loadPopularListsMovies,
       'movie/top_rated':loadTopRatedListsMovies,
@@ -46,7 +46,7 @@ export class MoviesFacadeService {
       console.error('No matching action found for the provided media and media_type');
     }
   }
-  getMovies(listType:ListsType){
+  getMovies(listType:Type){
     const listsSelectorMap={
       'movie/popular':selectMoviesPopularLists,
       'movie/top_rated':selectMoviesTopRatedLists,
