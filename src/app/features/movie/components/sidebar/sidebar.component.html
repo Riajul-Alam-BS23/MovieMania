@@ -65,18 +65,20 @@
           <div class="date-range">
             <div class="release-forms-field">
               <mat-label>from</mat-label>
-              <mat-form-field>
-                <input
-                  matInput
-                  [matDatepicker]="startDatePicker"
-                  [(ngModel)]="selectedReleaseDateFrom"
-                />
-                <mat-datepicker-toggle
-                  matIconSuffix
-                  [for]="startDatePicker"
-                ></mat-datepicker-toggle>
-                <mat-datepicker #startDatePicker></mat-datepicker>
-              </mat-form-field>
+              <!-- <div class="date-picker"> -->
+                <mat-form-field>
+                  <input
+                    matInput
+                    [matDatepicker]="startDatePicker"
+                    [(ngModel)]="selectedReleaseDateFrom"
+                  />
+                  <mat-datepicker-toggle
+                    matIconSuffix
+                    [for]="startDatePicker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #startDatePicker [panelClass]="'custom-datepicker-panel'"></mat-datepicker>
+                </mat-form-field>
+              <!-- </div> -->
             </div>
 
             <div class="release-forms-field">

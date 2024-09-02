@@ -178,3 +178,15 @@ mat-chip{
 .search-button:hover {
     background-color: #00a4b0;
 }
+
+@media (max-width: 950px) {
+    .release-forms-field mat-form-field {
+      width: 80%; 
+    }
+    ::ng-deep .mat-datepicker-content {
+      position: absolute;
+      z-index: 1000;
+    }
+}
+
+  
