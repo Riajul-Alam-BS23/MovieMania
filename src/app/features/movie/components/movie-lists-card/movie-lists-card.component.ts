@@ -18,10 +18,8 @@ export class MovieListsCardComponent {
     private route: ActivatedRoute
   ) {}
   ngOnInit():void{
-    console.log("yes test ==>",this.movies$);
   }
   OnClick(movieId:number):void{
-    console.log("Media type lists card clicked -->",this.type);
     this.router.navigate(['details', this.type ,movieId]);
   }
 }

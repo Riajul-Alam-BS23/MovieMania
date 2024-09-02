@@ -14,6 +14,7 @@ import { MovieListsCardComponent } from './components/movie-lists-card/movie-lis
 
 
 
+
 @NgModule({
   declarations: [
     // MovieComponent,
@@ -25,6 +26,8 @@ import { MovieListsCardComponent } from './components/movie-lists-card/movie-lis
   
     // MovieListsComponent,
     // MovieListsCardComponent
+  
+    
   ],
   imports: [
     CommonModule,

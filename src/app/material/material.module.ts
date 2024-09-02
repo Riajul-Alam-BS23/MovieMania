@@ -30,7 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
+import { MAT_RIPPLE_GLOBAL_OPTIONS, MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -47,7 +47,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatOptionModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -95,6 +95,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         MatTooltipModule,
         MatTreeModule,
         MatFormFieldModule,
+        MatOptionModule,
 
 
 
@@ -102,6 +103,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         ScrollingModule,
         // BrowserModule,
         // BrowserAnimationsModule
+      ],
+      providers: [
+        { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: { disabled: true } }
       ],
   exports: [
     A11yModule,
@@ -146,13 +150,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTooltipModule,
     MatTreeModule,
     MatFormFieldModule,
+    MatOptionModule,
 
 
 
     PortalModule,
-    ScrollingModule,
-    // BrowserModule,
-    // BrowserAnimationsModule
+    ScrollingModule
   ]
 })
 export class MaterialModule { }

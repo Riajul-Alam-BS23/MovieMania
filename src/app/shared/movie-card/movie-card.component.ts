@@ -15,9 +15,11 @@ export class MovieCardComponent {
   date:string;
   rating:number;  
   ngOnInit() : void{
-    this.title = this.movie.title || this.movie.name;
-    this.date = this.movie.release_date || this.movie.first_air_date;
-    this.rating = parseFloat(this.movie.vote_average.toFixed(1)) * 10;
+    if(this.title){
+      this.title = this.movie.title || this.movie.name;
+    }
+    if(this.date)this.date = this.movie.release_date || this.movie.first_air_date;
+    if(this.rating)this.rating = parseFloat(this.movie.vote_average.toFixed(1)) * 10;
   }
 }
 

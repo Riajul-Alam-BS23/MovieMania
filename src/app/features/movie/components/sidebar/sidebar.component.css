@@ -1,0 +1,192 @@
+
+
+
+
+
+
+
+
+
+
+/* .full-width-divider {
+    position: absolute;
+    left: 0;
+    right: 0;
+} */
+  
+
+
+/* Sort part design */
+
+
+/* mat-expansion-panel-header{
+    padding: 0;
+    margin: 0;
+} */
+
+
+/* Sort part design */
+.sortHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.sort-icon{
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+}
+.sort-container{
+    margin-bottom: 10px;
+}
+.sort-content-customP{
+    padding-top: 10px;
+    font-size: 13px;
+}
+.full-width-divider{
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+mat-form-field{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 70px;
+}
+mat-select{
+    font-size: 1rem;
+}
+
+/* filter section */
+.query-section{
+    margin-bottom: 8px;
+}
+.query-section>p{
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+
+.release-date-section{
+    margin-bottom: 8px
+}
+.release-date-section>p{
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.release-forms-field{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.release-forms-field mat-form-field{
+    padding-left: 5px;
+    height: 40px;
+    width: 180px;
+}
+
+mat-chip{
+    margin: 4px;
+    border-radius: 50%;
+}
+.genres-section{
+    margin-bottom: 8px
+}
+.genres-section>p{
+    font-size: 14px;
+    margin: 14px 0;
+}
+
+
+.genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .genre-item {
+    padding: 5px 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 20px;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .genre-item:hover {
+    background-color: #00bcd4;
+  }
+  
+
+  .certification-section>p{
+    font-size: 14px;
+    margin: 20px 0;
+  }
+
+
+  /* user score */
+  mat-slider{
+    width: 100%;
+  }
+
+
+/* genres */
+.genre-item {
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin: 4px;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+  
+  .genre-item.selected {
+    background-color: #007bff;
+    color: white;
+  }
+  
+
+  /* Searchbar */
+  .search-button {
+    background-color: #00bcd4;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.search-button:focus,
+.search-button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.search-button:hover {
+    background-color: #00a4b0;
+}
+
+@media (max-width: 950px) {
+    .release-forms-field mat-form-field {
+      width: 80%; 
+    }
+    ::ng-deep .mat-datepicker-content {
+      position: absolute;
+      z-index: 1000;
+    }
+}
+
+  

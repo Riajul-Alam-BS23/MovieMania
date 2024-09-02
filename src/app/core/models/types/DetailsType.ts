@@ -15,9 +15,9 @@ export interface DataType{
     media_type?: string;
 }
 
-export interface ListsType{
+export interface Type{
     media?: string;
-    // recommendations?: string;
     page?: number;
     media_type?: string;
+    queryParams?: any;
 }

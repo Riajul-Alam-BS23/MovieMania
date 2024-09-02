@@ -30,33 +30,8 @@ export class HomeComponent {
 ngOnInit():void{
     this.store.dispatch(MovieActions.loadTrendingMovies({ period: this.activeTrendingMovies }));
     this.store.dispatch(PopularMovieActions.loadPopularMovies({ period: this.activePopularMovies }));
-
-    // this.store.dispatch(MovieActions.loadTrendingMovies({period:'day'}));
-    // this.movies$=this.store.pipe(
-    //   select(MovieSelectors.selectTrendingMovies)
-    // )
     this.movies$=this.store.select(MovieSelectors.selectTrendingMovies);
     this.popularMovies$=this.store.select(PopularMovieSelectors.selectPopularMovies);
-
-    // popular
-    // this.store.dispatch(PopularMovieActions.loadPopularMovies({period:'movie'}));
-    // this.popularMovies$=this.store.pipe(hu08.l     //   select(PopularMovieSelectors.selectPopularMovies)
-    // )
-    // this.movies$.subscribe((data) => {
-    //   console.log('Data from Home page ==>>', data);
-    // });
-
-
-
-    // testing
-    // this.store.dispatch(MovieListsActions.loadListsByType({ dataType: {
-    //   media_type:'movie',
-    //   media_type_type: 'top_rated',
-    //   page: 1
-    // } }));
-    // const moviesTests$=this.store.select(MovieListsSelectors.selectMovieLists);
-    // console.log("Data testing ==>> ",moviesTests$)
-
   }
 
 
