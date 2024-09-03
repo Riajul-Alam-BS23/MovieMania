@@ -101,7 +101,7 @@ export class SidebarComponent {
       `sort_by=${this.selectedSort}`,
       `page=${this.pageNumber}`,
       `language=en-US`,
-      this.selectedGenres.length > 0 ? `with_genres=${this.selectedGenres.join(',')}` : '',
+      this.selectedGenres.length > 0 ? `with_genres=${this.selectedGenres.join(' ')}` : '',
       this.selectedReleaseDateFrom ? `primary_release_date.gte=${this.selectedReleaseDateFrom}` : '',
       this.selectedReleaseDateTo ? `primary_release_date.lte=${this.selectedReleaseDateTo.toISOString().split('T')[0]}` : '',
       this.keywords ? `with_keywords=${this.keywords}` : '',

@@ -25,14 +25,6 @@ export class MovieService {
 
   getSingleMovie(type:DetailsType): Observable<MovieDetails>{
     const apiUrl = `${environment.BASE_URL}/${type.media_type}/${type.id}?language=en-US`
-    // this.http.get<MovieDetails>(apiUrl).subscribe(
-    //   (data) => {
-    //     console.log("Single movie =>", data);
-    //   },
-    //   (error) => {
-    //     console.error("Error fetching movie data", error);
-    //   }
-    // );
     return this.http.get<MovieDetails>(apiUrl);
 
   }
