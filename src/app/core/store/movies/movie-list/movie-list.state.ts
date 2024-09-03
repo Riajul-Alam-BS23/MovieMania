@@ -28,7 +28,7 @@ export const movieListsFeature = createFeature({
             movies: {
                 ...state.movies,
                 page: movies.page,
-                results:(movies.page>=2? [...movies.results,...state.movies.results]: movies.results),
+                results:(movies.page>=2? [...state.movies.results,...movies.results]: movies.results),
                 total_pages: movies.total_pages,
                 total_results: movies.total_results,
             },
