@@ -23,18 +23,16 @@ export class MovieService {
     return data;
   }
 
-
-
   getSingleMovie(type:DetailsType): Observable<MovieDetails>{
     const apiUrl = `${environment.BASE_URL}/${type.media_type}/${type.id}?language=en-US`
-    this.http.get<MovieDetails>(apiUrl).subscribe(
-      (data) => {
-        console.log("Single movie =>", data);
-      },
-      (error) => {
-        console.error("Error fetching movie data", error);
-      }
-    );
+    // this.http.get<MovieDetails>(apiUrl).subscribe(
+    //   (data) => {
+    //     console.log("Single movie =>", data);
+    //   },
+    //   (error) => {
+    //     console.error("Error fetching movie data", error);
+    //   }
+    // );
     return this.http.get<MovieDetails>(apiUrl);
 
   }
@@ -49,7 +47,6 @@ export class MovieService {
     return this.http.get<any>(apiUrl);
   }
 
-  // final
   getListsMovies(listsType:DataType): Observable<PaginationResponse<Movie[]>> {
     const apiUrl = `${this.baseUrl}/${listsType.media}/${listsType.media_type}?language=en-US&page=${listsType.page}`;
     return this.http.get<PaginationResponse<Movie[]>>(apiUrl);
@@ -57,13 +54,6 @@ export class MovieService {
   getGenres(type:Type){
     const apiUrl = `${environment.BASE_URL}/genre/${type.media}/list?language=en-US`;
     return this.http.get<any>(apiUrl);
-  }
-
-  getFiltersData1(type:string,queryParams:any){
-    const apiUrl = `${this.baseUrl}/discover/${type}?${queryParams}`;
-    const value= this.http.get<any>(apiUrl);
-    console.log("Value in Service: " + value);
-    return value;
   }
   getFiltersData(type:Type){
     const apiUrl = `${this.baseUrl}/discover/${type.media}?${type.queryParams}`;
