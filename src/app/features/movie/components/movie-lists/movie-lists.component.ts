@@ -21,13 +21,9 @@ export class MovieListsComponent implements OnInit {
   pageNumber = 1;
   media: string;
   mediaSubType: string;
-  routeChange = Observable<any>;
   constructor(
-    private movieService: MovieService,
-    private store: Store,
     private router: Router,
     private route: ActivatedRoute,
-    private moviesFacadeService: MoviesFacadeService,
     private movieListsService:MovieListsService,
     private movieListsFacadeService:MovieListsFacadeService
   ) {}
