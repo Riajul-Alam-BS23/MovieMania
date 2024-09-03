@@ -1,10 +1,31 @@
-.movie-carousel-card-items{
+/* .movie-carousel-card-items{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+} */
+.movie-carousel-card-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    justify-content: center;
 }
 .movie-card-section{
     cursor: pointer;
 }
 
+@media (max-width: 978px) {
+    .movie-carousel-card-items{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-gap: 4px;
+        justify-content: center;
+    }
+}
+@media (max-width: 384px) {
+    .movie-carousel-card-items{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
