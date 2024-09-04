@@ -4,9 +4,11 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 } */
+ 
 .movie-carousel-card-items{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    grid-gap: 4px;
     justify-content: center;
 }
 .movie-card-section{
@@ -21,7 +23,7 @@
         justify-content: center;
     }
 }
-@media (max-width: 384px) {
+@media (max-width: 540px) {
     .movie-carousel-card-items{
         display: flex;
         flex-direction: row;

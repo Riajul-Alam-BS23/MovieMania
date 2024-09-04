@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PaginationResponse } from '../models/api/PaginationResponse';
 import { Movie } from '../models/api/MovieResponse';
-import { Observable, of, tap } from 'rxjs';
+import { catchError, Observable, of, tap, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Genre, MovieDetails } from '../models/api/MovieDetailsResponse';
@@ -44,19 +44,24 @@ export class MovieService {
     return this.http.get<PaginationResponse<Movie[]>>(apiUrl);
   }
   getGenres(type:Type){
-    const apiUrl = `${environment.BASE_URL}/genre/${type.media}/list?language=en-US`;
+    const apiUrl = `${environment.BASE_URL}/genre/${type.media}/list?language=en-US&page=1`;
     return this.http.get<any>(apiUrl);
   }
   getFiltersData(type:Type){
-    const apiUrl = `${this.baseUrl}/discover/${type.media}?${type.queryParams}`;
-    console.log("api url",apiUrl);
-    const value= this.http.get<any>(apiUrl).pipe(
-      tap(res=>{
-        console.log("Value in Service: " , res);
-      })
-    );
-    console.log("Value in Service: " + value);
-    return value;
+    const updatedType = {...type, queryParams: type.queryParams || `language=en-US&page=1`};    
+    const apiUrl = `${this.baseUrl}/discover/${type.media}?${updatedType.queryParams}`;
+    return this.http.get<any>(apiUrl);
+
+
+    // return this.http.get<any>(apiUrl).pipe(
+      //   tap(res=>{
+      //     console.log("Value in Service: " , res);
+      //   })
+    //   catchError(error => {
+    //     console.error('Error fetching data:', error);
+    //     return throwError(error);
+    //   })
+    // );
   }
 
 }

@@ -59,9 +59,9 @@ export const moviesReducer ={
     TV_TOP_RATED_LISTS_STATE_NAME:tvTopRatedListsReducer,
     TV_AIRING_TODAY_LISTS_STATE_NAME:tvAiringTodayListsReducer,
     TV_ON_TV_LISTS_STATE_NAME:tvOnTvListsReducer,
-    MOVIE_GENRES_LISTS_STATE_NAME: genresListsMoviesFeature.reducer,
-    MOVIE_LISTS_STATE_NAME: movieListsFeature.reducer,
-    TV_LISTS_STATE_NAME:tvListsFeature.reducer
+    // MOVIE_GENRES_LISTS_STATE_NAME: genresListsMoviesFeature.reducer,
+    // MOVIE_LISTS_STATE_NAME: movieListsFeature.reducer,
+    // TV_LISTS_STATE_NAME:tvListsFeature.reducer
 };
 
 export const MoviesEffects=[
@@ -79,14 +79,14 @@ export const MoviesEffects=[
     TvListsEffects
 ];
 
-export const combinedFeature = createFeature({
-    name: 'combined',
-    reducer: combineReducers({
-      genresListsMovies: genresListsMoviesFeature.reducer,
-      movieLists: movieListsFeature.reducer,
-      tvLists: tvListsFeature.reducer,
-    }),
-  });
+// export const combinedFeature = createFeature({
+//     name: 'combined',
+//     reducer: combineReducers({
+//       genresListsMovies: genresListsMoviesFeature.reducer,
+//       movieLists: movieListsFeature.reducer,
+//       tvLists: tvListsFeature.reducer,
+//     }),
+//   });
 
 
 
