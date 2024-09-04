@@ -32,8 +32,6 @@ export class MovieListsComponent implements OnInit {
 
     //for initial route change
     this.route.paramMap.subscribe(params=>{
-      console.log("1")
-      console.log("initial param map call")
       this.pageNumber=1;
       this.media=params.get('media');
       const requestType:Type={
@@ -47,15 +45,14 @@ export class MovieListsComponent implements OnInit {
           }else{
             this.movieListsFacadeService.dispatchLists(requestType);
             this.movies$=this.movieListsFacadeService.getLists(this.media);
+            this.movies$.subscribe(movies=>{
+              const moviesToDisplay = movies.results.slice(0,20);
+              this.movies$=of(moviesToDisplay);
+            });
           }
         }
       );
-      console.log("Movies Observable ",this.movies$);
-      this.movies$.subscribe(movies=>{
-        console.log("movie list movies in queryParamMap", movies);
-        const moviesToDisplay = movies.results.slice(0,20);
-        this.movies$=of(moviesToDisplay);
-      });
+
     })
     
 
@@ -116,8 +113,8 @@ export class MovieListsComponent implements OnInit {
     });
   }
 
-  showSearchButton=false;
-  onSortChange(showSearchButton: boolean){
-    this.showSearchButton=showSearchButton;
-  }
+  // showSearchButton=false;
+  // onSortChange(){
+  //   this.showSearchButton=!this.showSearchButton;
+  // }
 }

@@ -5,7 +5,7 @@ import { MaterialModule } from '../../../../material';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { combinedFeature, MoviesEffects, moviesReducer} from '../../../../core/store/movies/movies.state';
+import {  MoviesEffects, moviesReducer} from '../../../../core/store/movies/movies.state';
 import { MovieListsComponent } from '../../components/movie-lists/movie-lists.component';
 import { MovieListsCardComponent } from '../../components/movie-lists-card/movie-lists-card.component';
 import { SharedModule } from '../../../../shared/shared.module';
