@@ -24,23 +24,16 @@ export class MovieDetailsResolver implements Resolve<any> {
     }
 
     return this.store.pipe(
-      // Dispatch the action to load movie details
       tap(() => this.store.dispatch(loadMovieDetails({ details:detailsType }))),
-      
-      // Wait for loading to complete
       switchMap(() =>
         this.store.select(selectMovieDetailsLoading)
       ),
-      
-      // Select the movie details from the store
       switchMap(() =>
         this.store.select(selectMovieDetails)
       ),
-      
-      // Handle any errors that might occur
       catchError(error => {
         console.error('Error loading movie details:', error);
-        return of(null); // Return a fallback value or navigate away
+        return of(null);
       })
     );
   }

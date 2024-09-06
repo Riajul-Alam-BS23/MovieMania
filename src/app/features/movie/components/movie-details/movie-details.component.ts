@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { selectMovieDetails } from '../../../../core/store/movie/movie-details/movie-details.selectors';
@@ -17,10 +17,12 @@ import { DetailsType } from '../../../../core/models/types/DetailsType';
 export class MovieDetailsComponent {
   movie$: Observable<MovieDetails>;
   moviesRecommendations$: Observable<Movie[]>;
+
   constructor(private store:Store, 
     private route:ActivatedRoute,
     private router:Router
   ) { }
+
   ngOnInit(): void {
     const type = this.route.snapshot.paramMap.get('type');
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -33,4 +35,20 @@ export class MovieDetailsComponent {
     this.store.dispatch(loadRecommendationsMovies({movies: movies}));
     this.moviesRecommendations$= this.store.select(selectMoviesRecommendations);
   }
+
+  // tooltipOpen = false;
+  tooltipVideoUrl: string | undefined='https://www.youtube.com/embed/MuHpsz7Q3P0?si=IwqBUDbUdZp8ik1Q';
+  
+
+  // showTooltip(movieId: number, event: MouseEvent) {
+  //   this.tooltipVideoUrl = `https://www.youtube.com/embed/MuHpsz7Q3P0?si=IwqBUDbUdZp8ik1Q`;
+  //   this.tooltipOpen = true;
+  // }
+
+  // hideTooltip() {
+  //   this.tooltipOpen = false;
+  //   this.tooltipVideoUrl = 'https://www.youtube.com/embed/MuHpsz7Q3P0?si=IwqBUDbUdZp8ik1Q';
+  // }
+
+
 }

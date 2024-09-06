@@ -45,8 +45,7 @@ const routes: Routes=[
     RouterModule.forChild(routes),
     HomeModule
 
-  ],
-  // exports:[RouterModule]
+  ]
 })
 export class MovieDetailsModule { }
 

@@ -1,12 +1,11 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { MovieService } from '../../../../core/services/movie.service';
 import { Store } from '@ngrx/store';
 import { Genre } from '../../../../core/models/api/MovieDetailsResponse';
-import { Observable, switchMap } from 'rxjs';
-import { GenresListsMoviesActions } from '../../../../core/store/filters/genres/genres.actions';
+import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataType, Type } from '../../../../core/models/types/DetailsType';
+import { Type } from '../../../../core/models/types/DetailsType';
 import { MovieListsFacadeService } from '../../services/movie-lists.facade.service';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Location } from '@angular/common';
@@ -44,8 +43,6 @@ export class SidebarComponent {
   showSearchButton:boolean = false;;
 
   constructor(
-    private movieService: MovieService,
-    private store: Store,
     private route: ActivatedRoute,
     private movieListsFacadeService: MovieListsFacadeService,
     private router: Router,
@@ -74,7 +71,7 @@ export class SidebarComponent {
 
     this.route.queryParamMap.subscribe((params) => {
       this.resetFilters(params);
-    })
+    });
 
   }
 

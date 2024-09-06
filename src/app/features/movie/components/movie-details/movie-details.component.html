@@ -3,10 +3,27 @@
 <mat-card class="movie-card" *ngIf="movie$ | async as movie" [ngStyle]="{'background-image': 'url(' + 'https://image.tmdb.org/t/p/w440_and_h660_face/pjnD08FlMAIXsfOLKQbvmO0f0MD.jpg' + ')'}">
     <div class="movie-card-content">
       <div class="movie-image">
-        <img [src]="'https://image.tmdb.org/t/p/w440_and_h660_face' + movie.poster_path"
-
+        <a 
+        appPopover 
+        [videoUrl]="tooltipVideoUrl"
+        [height]="450" [width]="300"
+        >
+        <img 
+        [src]="'https://image.tmdb.org/t/p/w440_and_h660_face' + movie.poster_path"
           alt={{movie.title}}>
+      </a>
       </div>
+
+      <!-- <div class="popup-container">
+          <app-movie-popover
+          *ngIf="tooltipOpen"
+          [videoUrl]="tooltipVideoUrl"
+          (mouseover)="showTooltip(movie.id, $event)"
+          (mouseleave)="hideTooltip()"
+          class="overlay"
+        ></app-movie-popover>
+      </div> -->
+
       <div class="movie-details">
         <mat-card-header class="movie-card-header">
           <mat-card-title class="movie-card-title">

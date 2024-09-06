@@ -22,8 +22,16 @@ export class MovieListsEffects {
                     tap(() => {
                         console.log(`Loading  Lists Movies for testing`);
                     }),
-                    map((response: PaginationResponse<Movie[]>) => 
-                        MovieListsActions.loadListsMoviesSuccess({ movies: response })
+                    map((response: PaginationResponse<Movie[]>) =>{
+                        if(!response){
+                            throw new Error('No data returned');
+                        }
+                        if (!Array.isArray(response.results)) {
+                            throw new Error('Unexpected data type');
+                        }
+                       return MovieListsActions.loadListsMoviesSuccess({ movies: response })
+                    } 
+                        
                     ),
                     catchError(error => 
                         of(MovieListsActions.loadListsMoviesFailure({ error: error.message }))

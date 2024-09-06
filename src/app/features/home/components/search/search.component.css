@@ -17,10 +17,12 @@
     font-size: 14px;
     padding: 10px 20px;
 }
+
 .search-input input:focus{
     outline: none;
     box-shadow: none;
 }
+
 .search-input input::placeholder{
     font-size: 16px;
     opacity: 0.5;
@@ -41,3 +43,7 @@
 .searchbar-title{
     margin-bottom: 20px;
 }
+
+/* In the context of Angular modules, a singleton refers to a service or object that is instantiated only once during the lifetime of an application⁠
+1
+⁠. Singleton services are typically used for functionality that needs to be shared across the entire app, such as authentication services⁠ */

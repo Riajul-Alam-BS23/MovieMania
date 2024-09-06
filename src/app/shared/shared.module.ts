@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { MovieCardComponent } from './movie-card/movie-card.component';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { MaterialModule } from '../material';
 import { CommonModule } from '@angular/common';
-import { MovieRatingComponent } from './movie-rating/movie-rating.component';
-import { CustomDropdownMenuComponent } from './custom-dropdown-menu/custom-dropdown-menu.component';
+import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
+import { CustomDropdownMenuComponent } from './components/custom-dropdown-menu/custom-dropdown-menu.component';
+import { MoviePopoverComponent } from './components/movie-popover/movie-popover.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { PopoverDirective } from './directives/popover.directive';
 
 
 
@@ -13,7 +16,10 @@ import { CustomDropdownMenuComponent } from './custom-dropdown-menu/custom-dropd
   declarations: [
     MovieCardComponent,
     MovieRatingComponent,
-    CustomDropdownMenuComponent
+    CustomDropdownMenuComponent,
+    MoviePopoverComponent,
+    SafeUrlPipe,
+    PopoverDirective
   ],
   imports: [
     CommonModule,
@@ -24,8 +30,10 @@ import { CustomDropdownMenuComponent } from './custom-dropdown-menu/custom-dropd
   exports: [
     MovieCardComponent,
     MovieRatingComponent,
-    CustomDropdownMenuComponent
-
+    CustomDropdownMenuComponent,
+    MoviePopoverComponent,
+    SafeUrlPipe,
+    PopoverDirective
   ]
 })
 export class SharedModule { }

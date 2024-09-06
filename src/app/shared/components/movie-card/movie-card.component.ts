@@ -1,7 +1,7 @@
 
 
 import { Component, Input } from '@angular/core';
-import { Movie } from '../../core/models/api/MovieResponse';
+import { Movie } from '../../../core/models/api/MovieResponse';
 
 @Component({
   selector: 'app-movie-card',

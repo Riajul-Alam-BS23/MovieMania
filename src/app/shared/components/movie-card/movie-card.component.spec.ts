@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MovieCardComponent } from './movie-card.component';
-import { MaterialModule } from '../../material';
+import { MaterialModule } from '../../../material';
 import { MovieRatingComponent } from '../movie-rating/movie-rating.component';
 
 describe('MovieCardComponent', () => {

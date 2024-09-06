@@ -84,7 +84,7 @@
 
 @media (max-width: 2600px) {
     .movies-container {
-        max-width: 2600px;
+        max-width: 100%;
         padding: 60px 80px;
         margin-bottom:20px ;
     }
@@ -105,7 +105,7 @@
 
 @media (max-width: 1600px) {
     .movies-container {
-        max-width: 1600px;
+        max-width: 100%;
         padding: 30px 40px;
 
     }
@@ -126,6 +126,7 @@
 
 @media (max-width: 1200px){
     .movies-container {
+        max-width: 100%;
         max-width: 100%;
         padding: 30px 40px;
 
@@ -155,7 +156,11 @@
     .movies-header-title {
         font-size: 1.5rem;
     }
-
+    .movies-container {
+        max-width: 100%;
+        padding: 30px 40px;
+        margin-bottom:20px ;
+    }
     .movies-lists-content {
         flex-direction: column;
         width: 100%; 
@@ -193,7 +198,12 @@
     .movies-header-title {
         font-size: 1.2rem;
     }
-
+    .movies-container{
+        max-width: 100%;
+        padding: 30px 40px;
+        margin-bottom:20px ;
+    }
+    
     .movies-lists-content {
         flex-direction: column;
         width: 100%; 
