@@ -11,33 +11,21 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { GenreListsComponent } from './components/genre-lists/genre-lists.component';
 import { MovieListsComponent } from './components/movie-lists/movie-lists.component';
 import { MovieListsCardComponent } from './components/movie-lists-card/movie-lists-card.component';
+import { MoviePopoverComponent } from '../../shared/components/movie-popover/movie-popover.component';
 
 
 
 
 @NgModule({
   declarations: [
-    // MovieComponent,
-    // MovieActionsComponent,
-    // CrewListsComponent,
-    // MovieDetailsComponent
-  
-    // GenreListsComponent
-  
-    // MovieListsComponent,
-    // MovieListsCardComponent
-  
-    
   ],
   imports: [
     CommonModule,
     MaterialModule,
     MovieRoutingModule,
-    SharedModule,
-    // MovieDetailsModule
+    SharedModule
   ],
   exports: [
-    // MovieComponent
   ]
 })
 export class MovieModule { }

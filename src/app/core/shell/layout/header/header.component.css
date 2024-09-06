@@ -1,3 +1,4 @@
+
 .tmdb-header {
     background-color: #032541;
     color: white;
@@ -49,7 +50,7 @@ mat-toolbar button {
     margin-right: 20px;
 }
 
-  
+
 /* Search */
 
 
@@ -65,6 +66,61 @@ mat-toolbar button {
 .mat-raised-button:hover, 
 .mat-flat-button:hover, 
 .mat-stroked-button:hover {
-  box-shadow: none; /* Removes the shadow */
-  background-color: inherit; /* Keeps the background color unchanged */
+    box-shadow: none; /* Removes the shadow */
+    background-color: inherit; /* Keeps the background color unchanged */
 }
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .tmdb-header .logo {
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tmdb-header .logo {
+        height: 30px;
+    }
+    
+    .tmdb-header {
+        flex-direction: column;
+        padding: 8px;
+    }
+    
+    .tmdb-header app-custom-dropdown-menu {
+        margin-bottom: 8px;
+    }
+    
+    .spacer {
+        display: none;
+    }
+    
+    .nav-icon {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tmdb-header .logo {
+        height: 25px;
+    }
+    
+    .nav-icon {
+        flex-direction: column;
+    }
+    
+    .mat-icon {
+        font-size: 20px;
+    }
+    
+    .profile-button, .search-icon, .language-icon {
+        margin: 0 8px;
+    }
+}
+
+mat-toolbar{
+    width: 100%;
+}
+  

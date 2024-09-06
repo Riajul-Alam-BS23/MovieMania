@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../../../../core/services/movie.service';
-import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataType, Type } from '../../../../core/models/types/DetailsType';
+import { Type } from '../../../../core/models/types/DetailsType';
 import { Observable, of } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
-import { MoviesFacadeService } from '../../services/movies.facade.service';
-import { Movie } from '../../../../core/models/api/MovieResponse';
-import { PaginationResponse } from '../../../../core/models/api/PaginationResponse';
 import { MovieListsService } from '../../services/movie-lists.service';
 import { MovieListsFacadeService } from '../../services/movie-lists.facade.service';
+import { MoviePopoverComponent } from '../../../../shared/components/movie-popover/movie-popover.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-movie-lists',
@@ -32,11 +28,10 @@ export class MovieListsComponent implements OnInit {
 
     //for initial route change
     this.route.paramMap.subscribe(params=>{
-      this.pageNumber=1;
       this.media=params.get('media');
       const requestType:Type={
         media: this.media,
-        page: this.pageNumber
+        page: this.pageNumber || 1
       }
       this.movieListsFacadeService.getLists(this.media).subscribe(
         (movies)=>{
@@ -58,16 +53,16 @@ export class MovieListsComponent implements OnInit {
 
     //for queryParams change in route
     this.route.queryParamMap.subscribe((params) => {
+      console.log("its called after reload")
       const currentPage=params.get('page');
-      if(parseInt(currentPage)==1){
         console.log("2 --->warning")
         console.log("queryParamMap call from ngOnInit",params)
-        this.pageNumber=1;
         this.movieListsService.createQueryParams(params);
         const queryParams = this.movieListsService.getQueryParams();
+        this.pageNumber=parseInt(params.get('page'));
         const requestType:Type={
           media: this.media,
-          page: this.pageNumber,
+          page: this.pageNumber || 1,
           queryParams: queryParams
         }
         this.movieListsFacadeService.dispatchLists(requestType);
@@ -76,7 +71,6 @@ export class MovieListsComponent implements OnInit {
           const moviesToDisplay = movies.results.slice(0,20);
           this.movies$=of(moviesToDisplay);
         });
-      }
     });
   }
 
@@ -84,11 +78,11 @@ export class MovieListsComponent implements OnInit {
     this.pageNumber++;
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { page: this.pageNumber },
+      queryParams: { page: this.pageNumber|| 2},
       queryParamsHandling: 'merge',
     });
     this.route.queryParamMap.subscribe((params) => {
-      console.log("4")
+      this.pageNumber=parseInt(params.get('page'));
 
       this.movieListsService.createQueryParams(params);
       const queryParams = this.movieListsService.getQueryParams(); 
@@ -113,8 +107,9 @@ export class MovieListsComponent implements OnInit {
     });
   }
 
-  // showSearchButton=false;
-  // onSortChange(){
-  //   this.showSearchButton=!this.showSearchButton;
-  // }
+  tooltipVideoUrl: string | undefined='https://www.youtube.com/embed/MuHpsz7Q3P0?si=IwqBUDbUdZp8ik1Q';
+
+
+
+
 }
