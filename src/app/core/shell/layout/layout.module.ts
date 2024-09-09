@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -33,7 +34,8 @@ import { SharedModule } from '../../../shared/shared.module';
     MatInputModule,
     FormsModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,
@@ -43,21 +45,3 @@ import { SharedModule } from '../../../shared/shared.module';
       ],
 })
 export class LayoutModule { }
-
-// import { NgModule } from "@angular/core";
-// import { LayoutModule } from "./shell/layout/layout.module";
-// import { BrowserModule } from "@angular/platform-browser";
-
-
-// @NgModule({
-//     imports: [
-//         LayoutModule
-//     ],
-//     exports: [
-//         BrowserModule,
-//         LayoutModule
-//     ],
-//     providers: [
-//     ],
-// })
-// export class CoreModule{}

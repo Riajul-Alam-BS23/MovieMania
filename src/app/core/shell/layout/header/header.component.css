@@ -21,7 +21,6 @@
 mat-toolbar button {
     color: white;
     font-size: 18px;
-    /* margin-right: 5px; */
     padding-right: 10px;
     padding-bottom: 5px;
 }
@@ -51,76 +50,40 @@ mat-toolbar button {
 }
 
 
-/* Search */
-
-
-.temp{
-    color: white;
-    font-size: 18px;
-    margin-right: 5px;
-}
-.temp button{
-    color: white !important;
-}
-.mat-button:hover, 
-.mat-raised-button:hover, 
-.mat-flat-button:hover, 
-.mat-stroked-button:hover {
-    box-shadow: none; /* Removes the shadow */
-    background-color: inherit; /* Keeps the background color unchanged */
-}
-
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .tmdb-header .logo {
-        height: 35px;
-    }
-}
-
-@media (max-width: 768px) {
-    .tmdb-header .logo {
-        height: 30px;
-    }
-    
-    .tmdb-header {
-        flex-direction: column;
-        padding: 8px;
-    }
-    
-    .tmdb-header app-custom-dropdown-menu {
-        margin-bottom: 8px;
-    }
-    
-    .spacer {
-        display: none;
-    }
-    
-    .nav-icon {
-        justify-content: space-between;
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .tmdb-header .logo {
-        height: 25px;
-    }
-    
-    .nav-icon {
-        flex-direction: column;
-    }
-    
-    .mat-icon {
-        font-size: 20px;
-    }
-    
-    .profile-button, .search-icon, .language-icon {
-        margin: 0 8px;
-    }
-}
-
 mat-toolbar{
     width: 100%;
 }
-  
+
+@media (min-width: 800px) {
+    .sidenavToggleIcon{
+        display:none ;
+    }
+}
+
+@media (max-width: 800px) {
+    .hide-menu{
+        display: none;
+    }
+    .navigation-items{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo {
+        height: 20px;
+        width: 110px;
+    }
+    .nav-icon button {
+        margin-right: 5px;
+    }
+    mat-toolbar button {
+        color: white;
+        font-size: 13px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+    }
+    .side-navigation {
+        width: 200px;
+        border-radius: 0 !important;
+    }
+}

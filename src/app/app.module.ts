@@ -17,7 +17,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { LayoutModule } from './core/shell/layout/layout.module';
 import { MovieDetailsModule } from './features/movie/modules/movie-details/movie-details.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,9 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    // BrowserAnimationsModule,
-    // MaterialModule,
-    // CoreModule,
     LayoutModule,
     HttpClientModule,
     HomeModule,

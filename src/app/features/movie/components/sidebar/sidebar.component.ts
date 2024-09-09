@@ -88,7 +88,6 @@ export class SidebarComponent {
   onSortChange(event: MatSelectChange) {
     console.log("Change Event : ", event.value);
     this.selectedSort = event.value;
-    // this.showSearchButton.emit(true);
   }
 
   toggleSortPanel() {

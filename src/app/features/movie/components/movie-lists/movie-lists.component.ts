@@ -13,6 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./movie-lists.component.css'],
 })
 export class MovieListsComponent implements OnInit {
+  tooltipVideoUrl: string | undefined='https://www.youtube.com/embed/MuHpsz7Q3P0?si=IwqBUDbUdZp8ik1Q';
   movies$: Observable<any>;
   pageNumber = 1;
   media: string;
@@ -57,8 +58,7 @@ export class MovieListsComponent implements OnInit {
       const currentPage=params.get('page');
         console.log("2 --->warning")
         console.log("queryParamMap call from ngOnInit",params)
-        this.movieListsService.createQueryParams(params);
-        const queryParams = this.movieListsService.getQueryParams();
+        const queryParams=this.createQueryParams(params);
         this.pageNumber=parseInt(params.get('page'));
         const requestType:Type={
           media: this.media,
@@ -84,8 +84,7 @@ export class MovieListsComponent implements OnInit {
     this.route.queryParamMap.subscribe((params) => {
       this.pageNumber=parseInt(params.get('page'));
 
-      this.movieListsService.createQueryParams(params);
-      const queryParams = this.movieListsService.getQueryParams(); 
+      const queryParams=this.createQueryParams(params);
       const requestType:Type={
         media: this.media,
         page: this.pageNumber,
@@ -107,7 +106,25 @@ export class MovieListsComponent implements OnInit {
     });
   }
 
-  tooltipVideoUrl: string | undefined='https://www.youtube.com/embed/MuHpsz7Q3P0?si=IwqBUDbUdZp8ik1Q';
+  createQueryParams(queryParams: any){
+    let query=``;
+    query+=`include_adult=${queryParams.get('include_adult')|| 'false'}`;
+    query+=`&language=en-US`;
+    query+=`&page=${queryParams.get('page')|| '1'}`;
+    query+=(queryParams.get('sort_by')?`&sort_by=${queryParams.get('queryParams.get')}`:'&sort_by=popularity.desc');
+    if(queryParams.get('primary_release_date.gte'))query+=`&primary_release_date.gte=${queryParams.get('primary_release_date.gte')}`;
+    if(queryParams.get('primary_release_date.lte')) query+=`&primary_release_date.lte=${queryParams.get('primary_release_date.lte')}`;
+    if(queryParams.get('with_genres')){
+      query+=`&with_genres=${queryParams.get('with_genres')}`;
+    }
+    if(queryParams.get('with_runtime.gte')) query+=`&with_runtime.gte=${queryParams.get('with_runtime.gte')}`;
+    if(queryParams.get('with_runtime.lte')) query+=`&with_runtime.lte=${queryParams.get('with_runtime.lte')}`;
+    if(queryParams.get('with_keywords')) query+=`&with_keywords=${queryParams.get('with_keywords')}`;
+    if(queryParams.get('vote_average.gte')) query+=`&vote_average.gte=${queryParams.get('vote_average.gte')}`;
+    if(queryParams.get('vote_average.lte')) query+=`&vote_average.lte=${queryParams.get('vote_average.lte')}`;
+    if(queryParams.get('vote_count.lte')) query+=`&vote_count.lte=${queryParams.get('vote_count.lte')}`;
+    return query;
+  }
 
 
 

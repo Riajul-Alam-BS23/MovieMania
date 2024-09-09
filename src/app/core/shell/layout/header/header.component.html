@@ -1,11 +1,14 @@
 
 <mat-toolbar color="primary" class="tmdb-header">
+  <button mat-icon-button (click)="sidenav.toggle()" class="sidenavToggleIcon">
+    <mat-icon>menu</mat-icon>
+  </button>
   <a routerLink="/home">
     <img
       src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
       alt="TMDB Logo" class="logo">
   </a>
-  <app-custom-dropdown-menu>
+  <app-custom-dropdown-menu class="hide-menu">
     <button  mat-button trigger >Movies</button>
     <div content class="dropdown-menu">
       <button mat-menu-item (click)="onClick('movie','popular')">Popular</button>
@@ -15,7 +18,7 @@
     </div>
   </app-custom-dropdown-menu>
 
-  <app-custom-dropdown-menu>
+  <app-custom-dropdown-menu class="hide-menu">
     <button  mat-button trigger >TV Shows</button>
     <div content class="dropdown-menu">
       <button mat-menu-item (click)="onClick('tv','popular')">Popular</button>
@@ -25,14 +28,14 @@
     </div>
   </app-custom-dropdown-menu>
 
-  <app-custom-dropdown-menu>
+  <app-custom-dropdown-menu class="hide-menu">
     <button  mat-button trigger >People</button>
     <div content class="dropdown-menu">
       <button mat-menu-item (click)="onClick('person','popular')">Popular People</button>
     </div>
   </app-custom-dropdown-menu>
 
-  <app-custom-dropdown-menu>
+  <app-custom-dropdown-menu class="hide-menu">
     <button  mat-button trigger >More</button>
     <div content class="dropdown-menu">
       <button mat-menu-item (click)="onClick('person','popular')">Discussions</button>
@@ -44,7 +47,7 @@
 
   <span class="spacer"></span>
   <div class="nav-icon">
-    <button mat-icon-button [matMenuTriggerFor]="addMovieMenu">
+    <button mat-icon-button [matMenuTriggerFor]="addMovieMenu" class="hide-menu">
       <mat-icon>add</mat-icon>
     </button>
     <mat-menu #addMovieMenu="matMenu" class="custom-menu-panel">
@@ -52,7 +55,7 @@
       <button mat-menu-item class="custom-menu-item">Add New TV Show</button>
     </mat-menu>
     <button mat-icon-button>
-      <mat-icon class="language-icon">language</mat-icon>
+      <mat-icon class="language-icon" class="hide-menu">language</mat-icon>
     </button>
     <button mat-icon-button>
       <mat-icon>notifications</mat-icon>
@@ -65,3 +68,53 @@
     </button>
   </div>
 </mat-toolbar>
+
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" class="side-navigation">
+    <mat-nav-list>
+      <div class="navigation-items">
+        <button mat-button [matMenuTriggerFor]="moviesMenu" class="navigation-item">
+          Movies
+        </button>
+        <mat-menu #moviesMenu="matMenu" class="custom-menu-panel1">
+          <button mat-menu-item (click)="onClick('movie','popular')">Popular</button>
+          <button mat-menu-item (click)="onClick('movie','now_playing')">Now Playing</button>
+          <button mat-menu-item (click)="onClick('movie','upcoming')">Upcoming</button>
+          <button mat-menu-item (click)="onClick('movie','top_rated')">Top Rated</button>
+        </mat-menu>
+    
+        <button mat-button [matMenuTriggerFor]="tvShowsMenu" class="navigation-item">
+          TV Shows
+        </button>
+        <mat-menu #tvShowsMenu="matMenu" class="custom-menu-panel1">
+          <button mat-menu-item (click)="onClick('tv','popular')">Popular</button>
+          <button mat-menu-item (click)="onClick('tv','airing_today')">Airing Today</button>
+          <button mat-menu-item (click)="onClick('tv','on_tv')">On TV</button>
+          <button mat-menu-item (click)="onClick('tv','top_rated')">Top Rated</button>
+        </mat-menu>
+    
+        <button mat-button [matMenuTriggerFor]="peopleMenu" class="navigation-item">
+          People
+        </button>
+        <mat-menu #peopleMenu="matMenu" class="custom-menu-panel1">
+          <button mat-menu-item (click)="onClick('person','popular')">Popular People</button>
+        </mat-menu>
+    
+        <button mat-button [matMenuTriggerFor]="moreMenu" class="navigation-item">
+          More
+        </button>
+        <mat-menu #moreMenu="matMenu" class="custom-menu-panel1">
+          <button mat-menu-item (click)="onClick('person','popular')">Discussions</button>
+          <button mat-menu-item (click)="onClick('person','popular')">Leaderboard</button>
+          <button mat-menu-item (click)="onClick('person','popular')">Support</button>
+          <button mat-menu-item (click)="onClick('person','popular')">API</button>
+        </mat-menu>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
