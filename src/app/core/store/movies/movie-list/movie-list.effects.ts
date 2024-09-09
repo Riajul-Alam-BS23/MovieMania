@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { MovieService } from '../../../services/movie.service';
 import { PaginationResponse } from '../../../models/api/PaginationResponse';
@@ -17,7 +17,7 @@ export class MovieListsEffects {
     loadListsMovies$ = createEffect(() =>
         this.actions$.pipe(
             ofType(MovieListsActions.loadListsMovies),
-            switchMap(({ movies }) =>
+            mergeMap(({ movies }) =>
                 this.movieService.getFiltersData(movies).pipe(
                     tap(() => {
                         console.log(`Loading  Lists Movies for testing`);

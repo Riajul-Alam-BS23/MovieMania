@@ -17,7 +17,7 @@ export class MovieNowPlayingListsEffects {
     loadNowPlayingListsMovies$ = createEffect(() =>
         this.actions$.pipe(
           ofType(MovieActions.loadNowPlayingListsMovies),
-          switchMap(({ movies }) =>
+          mergeMap(({ movies }) =>
             this.movieService.getListsMovies(movies).pipe(
               tap(()=>{
                 console.log(`Loading Lists Movies for`);

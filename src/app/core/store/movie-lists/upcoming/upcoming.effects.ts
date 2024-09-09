@@ -17,7 +17,7 @@ export class MovieUpcomingListsEffects {
     loadUpcomingListsMovies$ = createEffect(() =>
         this.actions$.pipe(
           ofType(MovieActions.loadUpcomingListsMovies),
-          switchMap(({ movies }) =>
+          mergeMap(({ movies }) =>
             this.movieService.getListsMovies(movies).pipe(
               tap(()=>{
                 console.log(`From Upcoming Effects `);

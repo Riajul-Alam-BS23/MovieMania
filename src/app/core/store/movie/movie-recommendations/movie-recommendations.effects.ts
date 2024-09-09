@@ -18,7 +18,7 @@ export class MovieRecommendationsEffects {
     loadTrendingMovies$ = createEffect(() =>
         this.actions$.pipe(
           ofType(MovieActions.loadRecommendationsMovies),
-          switchMap(({ movies }) =>
+          mergeMap(({ movies }) =>
             this.movieService.getRecommendationsMovies(movies).pipe(
               tap(()=>{
                 console.log(`Loading Trending Movies for`);
