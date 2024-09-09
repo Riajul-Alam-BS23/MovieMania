@@ -1,0 +1,40 @@
+.search-container{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+mat-form-field{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-field {
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.search-results-container {
+  max-height: 400px; /* Adjust based on your needs */
+  overflow-y: auto;
+}
+
+.search-results-card {
+  margin: 0;
+  padding: 0;
+}
+
+mat-list-item {
+  border-bottom: 1px solid #ddd;
+  padding: 0 30px;
+}
+
+mat-list-item:last-child {
+  border-bottom: none;
+}

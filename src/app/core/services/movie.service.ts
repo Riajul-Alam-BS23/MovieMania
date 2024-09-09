@@ -64,5 +64,10 @@ export class MovieService {
     // );
   }
 
+  getSearchData(searchTerm:string){
+    const apiUrl=`${this.baseUrl}/search/multi?query=${searchTerm}&include_adult=false&language=en-US`;
+    return this.http.get<PaginationResponse<Movie[]>>(apiUrl).pipe();
+  }
+
 }
 

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 
 
@@ -21,6 +22,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     FooterComponent,
+    SearchbarComponent,
   ],
   imports: [
     CommonModule,
