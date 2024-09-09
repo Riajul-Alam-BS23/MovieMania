@@ -55,48 +55,7 @@
 //     }
 // }
 
-
-// import { Directive, ElementRef, HostListener, Input, Renderer2, ComponentRef, ViewContainerRef } from '@angular/core';
-// import { MoviePopoverComponent } from '../components/movie-popover/movie-popover.component';
-// @Directive({
-//     selector: '[appPopover]'
-// })
-// export class PopoverDirective {
-//     @Input() videoUrl: string | undefined;
-//     @Input() height: number | undefined;
-//     private popoverComponentRef: ComponentRef<MoviePopoverComponent> | null = null;
-
-//     constructor(
-//         private elementRef: ElementRef,
-//         private viewContainerRef: ViewContainerRef
-//     ) { }
-
-//     @HostListener('mouseenter', ['$event'])
-//     onMouseEnter(event: MouseEvent) {
-//         if (this.videoUrl) {
-//             const rect = (this.elementRef.nativeElement as HTMLElement).getBoundingClientRect();
-//             const popoverFactory = this.viewContainerRef.createComponent(MoviePopoverComponent);
-
-//             this.popoverComponentRef = popoverFactory;
-//             const popoverInstance = this.popoverComponentRef.instance;
-
-//             // Pass data to the component
-//             popoverInstance.videoUrl = this.videoUrl;
-//             popoverInstance.top = rect.top - (this.height || 450);
-//             popoverInstance.left = rect.left;
-//             popoverInstance.visible = true;
-//         }
-//     }
-
-//     @HostListener('mouseleave')
-//     onMouseLeave() {
-//         if (this.popoverComponentRef) {
-//             this.popoverComponentRef.instance.visible = false;
-//             this.popoverComponentRef.destroy();
-//             this.popoverComponentRef = null;
-//         }
-//     }
-// }
+// avoid it because of direct dom manipulation
 
 
 

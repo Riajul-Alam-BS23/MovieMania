@@ -9,3 +9,4 @@ export class SafeUrlPipe implements PipeTransform {
     return this.sanitizer.bypassSecurityTrustResourceUrl(`${url}&amp;mute=1&amp;autoplay=1`);
   }
 }
+
