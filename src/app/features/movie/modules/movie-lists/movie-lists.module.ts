@@ -7,7 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {  MoviesEffects, moviesReducer} from '../../../../core/store/movies/movies.state';
 import { MovieListsComponent } from '../../components/movie-lists/movie-lists.component';
-import { MovieListsCardComponent } from '../../components/movie-lists-card/movie-lists-card.component';
+import { MovieListsCardComponent } from '../../../../shared/components/movie-lists-card/movie-lists-card.component';
 import { SharedModule } from '../../../../shared/shared.module';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +20,6 @@ import { genresListsTvsFeature } from '../../../../core/store/filters/tv-genres/
 @NgModule({
   declarations: [
     MovieListsComponent,
-    MovieListsCardComponent,
     SidebarComponent
   ],
   imports: [

@@ -1,0 +1,11 @@
+
+.empty{
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-results-container{
+    padding: 30px 40px;
+}

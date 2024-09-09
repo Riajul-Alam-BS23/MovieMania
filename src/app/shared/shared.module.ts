@@ -9,6 +9,7 @@ import { CustomDropdownMenuComponent } from './components/custom-dropdown-menu/c
 import { MoviePopoverComponent } from './components/movie-popover/movie-popover.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { PopoverDirective } from './directives/popover.directive';
+import { MovieListsCardComponent } from './components/movie-lists-card/movie-lists-card.component';
 
 
 
@@ -19,7 +20,8 @@ import { PopoverDirective } from './directives/popover.directive';
     CustomDropdownMenuComponent,
     MoviePopoverComponent,
     SafeUrlPipe,
-    PopoverDirective
+    PopoverDirective,
+    MovieListsCardComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { PopoverDirective } from './directives/popover.directive';
     CustomDropdownMenuComponent,
     MoviePopoverComponent,
     SafeUrlPipe,
-    PopoverDirective
+    PopoverDirective,
+    MovieListsCardComponent
   ]
 })
 export class SharedModule { }

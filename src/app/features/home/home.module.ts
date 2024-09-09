@@ -19,6 +19,7 @@ import { popularMovieReducer } from '../../core/store/home/popular/popular.reduc
 import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './home-routing.module';
 import { CarouselItemsComponent } from './components/carousel-items/carousel-items.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CarouselItemsComponent } from './components/carousel-items/carousel-ite
     HomeComponent,
     MoviesCarouselComponent,
     SearchComponent,
-    CarouselItemsComponent
+    CarouselItemsComponent,
+    SearchResultsComponent
   ],
   imports: [
     CommonModule,

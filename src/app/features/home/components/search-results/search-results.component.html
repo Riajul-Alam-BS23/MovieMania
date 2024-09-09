@@ -1,0 +1,14 @@
+
+
+<div class="search-results-container" *ngIf="type">
+    <app-movie-lists-card
+    [movies$]="searchResults$"
+    [type]="type"
+    ></app-movie-lists-card>
+</div>
+<div class="empty" *ngIf="type!=='movie' && type!=='tv'">
+
+    <h1>
+        No matches search results found.
+    </h1>
+</div>

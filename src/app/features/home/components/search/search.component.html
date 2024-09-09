@@ -7,8 +7,11 @@
             <h3 style="color: aliceblue;">Millions of movies, TV shows and people to discover. Explore now.</h3>
         </div>
         <div class="search-input">
-            <input matInput placeholder="Search for a movie, TV show, person...">
-            <button mat-flat-button>Search</button>
+            <input matInput 
+                [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange()"
+                placeholder="Search for a movie, TV show, person..."
+            >
+            <button mat-flat-button (click)="onSearch()">Search</button>
         </div>
     </div>
 </div>

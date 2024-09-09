@@ -1,0 +1,21 @@
+<div class="search-container">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput placeholder="Search for a movie, tv show, person..." 
+             [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange()"
+             (keydown.enter)="onSearch()"
+             (keypress)="onSearchQueryChange()">
+    </mat-form-field>
+  
+    <div class="search-results-container">
+      <mat-card *ngIf="(searchResults$ | async)" class="search-results-card">
+        <mat-list>
+          <mat-list-item *ngFor="let movie of (searchResults$ | async);">
+            <p mat-line>{{ movie }}</p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+      <p *ngIf="(searchResults$ | async)">No results found</p>
+    </div>
+  </div>
+  

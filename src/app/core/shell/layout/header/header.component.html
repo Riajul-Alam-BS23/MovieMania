@@ -63,12 +63,15 @@
     <button mat-icon-button class="profile-button">
       <mat-icon>account_circle</mat-icon>
     </button>
-    <button mat-icon-button>
-      <mat-icon class="search-icon">search</mat-icon>
+    <button mat-icon-button (click)="toggleSearchBar()">
+      <mat-icon class="search-icon"
+      
+      >search</mat-icon>
     </button>
   </div>
 </mat-toolbar>
-
+<app-searchbar *ngIf="showSearchBar">
+</app-searchbar>
 
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="over" class="side-navigation">

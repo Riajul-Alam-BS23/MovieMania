@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MovieService } from '../../../../core/services/movie.service';
+import { MovieService } from '../../../core/services/movie.service';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
