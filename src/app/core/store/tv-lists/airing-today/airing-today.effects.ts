@@ -17,7 +17,7 @@ export class TvAiringTodayListsEffects {
     loadAiringTodayListsTv$ = createEffect(() =>
         this.actions$.pipe(
           ofType(MovieActions.loadAiringTodayListsTv),
-          switchMap(({ movies }) =>
+          mergeMap(({ movies }) =>
             this.movieService.getListsMovies(movies).pipe(
               tap(()=>{
                 console.log(`Loading Lists Movies for`);

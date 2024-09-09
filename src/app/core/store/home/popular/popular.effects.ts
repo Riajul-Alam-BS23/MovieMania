@@ -15,7 +15,7 @@ export class PopularMovieEffects {
   loadPopularMovies$ = createEffect(() =>
     this.actions$.pipe(
       ofType(MovieActions.loadPopularMovies),
-      switchMap((options) =>
+      mergeMap((options) =>
       this.movieService.getPopularMovies(options.period).pipe(
        tap(()=>{
           console.log(`Loading Popular Movies for`);

@@ -10,7 +10,7 @@ export class MovieDetailsEffects {
   loadMovieDetails$ = createEffect(() =>
     this.actions$.pipe(
       ofType(MovieDetailsActions.loadMovieDetails),
-      switchMap(({ details }) =>
+      mergeMap(({ details }) =>
         this.movieService.getSingleMovie(details).pipe(
           tap(()=>{
             console.log(`Loading Trending Movies for`);

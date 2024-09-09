@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { GenresListsMoviesActions } from './genres.actions';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { MovieService } from '../../../services/movie.service';
 import { Genre } from '../../../models/api/GenreResponse';
@@ -16,7 +16,7 @@ export class MovieGenresListsEffects {
     loadGenresListsMovies$ = createEffect(() =>
         this.actions$.pipe(
           ofType(GenresListsMoviesActions.load),
-          switchMap(({ genres }) =>
+          mergeMap(({ genres }) =>
             this.movieService.getGenres(genres).pipe(
               tap(() => {
                 console.log(`Loading Genres Lists Movies for testing`,);
